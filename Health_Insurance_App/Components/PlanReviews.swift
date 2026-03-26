@@ -8,11 +8,32 @@
 import SwiftUI
 
 struct PlanReviews: View {
+    @EnvironmentObject var reviewManager: ReviewManager
+    let planID: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(reviewManager.reviews(for: planID), id: \.id) { review in
+                VStack(alignment: .leading, spacing: 6) {
+                    
+                    Text("Network Coverage: \(review.netCov)")
+                    Text(review.netCovText)
+                    Text("Communication: \(review.com)")
+                    Text(review.comText)
+                    Text("Customer Service: \(review.service)")
+                    Text(review.serviceText)
+                    
+                    Text(review.date, style: .date)
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                }
+                .padding(.vertical, 4)
+            }
+        }
     }
 }
 
 #Preview {
-    PlanReviews()
+    PlanReviews(planID: "samplePlan")
+        .environmentObject(ReviewManager())
 }

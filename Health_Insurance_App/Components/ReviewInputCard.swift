@@ -7,12 +7,27 @@
 
 import SwiftUI
 
-struct ReviewInputCard: View {
+struct ReviewInputCard<Content: View>: View {
+    var catName: String
+    @ViewBuilder var content: Content
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            Text(catName)
+                .font(.title3)
+            content
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 24)
+        .padding(.horizontal, 16)
+        .background(.white, in: RoundedRectangle(cornerRadius: 16))
     }
 }
 
 #Preview {
-    ReviewInputCard()
+    Background {
+        ReviewInputCard(catName: "Network Coverage") {
+            Text("Content")
+        }
+    }
 }

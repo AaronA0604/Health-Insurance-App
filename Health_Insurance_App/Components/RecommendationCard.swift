@@ -25,8 +25,8 @@ struct RecommendationCard: View {
                     Text(recommendation.planName)
                         .font(.title2.bold())
                     // TODO: put text on new line or make smaller before it overlaps with recommended text
-                    Text("Deductible: \(recommendation.deductible, format: .currency(code: "USD"))")
-                    Text("Premium: \(recommendation.premium, format: .currency(code: "USD"))")
+                    Text("Deductible: \(recommendation.deductible, format: .currency(code: "USD").precision(.fractionLength(0...2)))")
+                    Text("Premium: \(recommendation.premium, format: .currency(code: "USD").precision(.fractionLength(0...2)))")
                     
                 }
                 
@@ -50,7 +50,7 @@ struct RecommendationCard: View {
                     .padding(.horizontal, 10)
                     .padding(.vertical, 6)
                     .background(border.opacity(0.15))
-                    .foregroundColor(border)
+                    .foregroundColor(.blue)
                     .clipShape(Capsule())
                     .padding(8)
             }
@@ -63,8 +63,8 @@ struct RecommendationCard: View {
         RecommendationCard(
             recommendation: RecommendationCardVars(
                 planName: "Sample Plan",
-                deductible: 3200.00,
-                premium: 375.00,
+                deductible: 3200,
+                premium: 375,
                 isRecommended: true,
             ),
             border: .blue

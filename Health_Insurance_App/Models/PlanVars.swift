@@ -8,12 +8,13 @@
 import Foundation
 
 struct PlanVars: Identifiable {
-    let id = UUID()
+    let id = UUID().uuidString
     
     var planName: String
     var coName: String
     var deductible: Decimal
     var premium: Decimal
     var isRecommended: Bool
+    var url: String
     // TODO: add other variables as needed
 }

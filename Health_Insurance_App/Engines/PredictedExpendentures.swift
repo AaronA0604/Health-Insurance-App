@@ -10,7 +10,7 @@ import Foundation
 struct PredictedExpendentures {
     // TODO: make prediction model like in TrailAnalyzer
 
-    static var sample: [SpendingVars] = [
+    static let sample: [SpendingVars] = [
         SpendingVars(
             level: "Preventative Care",
             genPrac: 0.00,

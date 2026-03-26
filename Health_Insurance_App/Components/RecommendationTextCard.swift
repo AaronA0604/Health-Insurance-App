@@ -9,10 +9,20 @@ import SwiftUI
 
 struct RecommendationTextCard: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            VStack(alignment: .leading) {
+                Text(RecommendationTextGen.sample)
+            }
+            
+            Spacer()
+        }
+        .padding()
+        .background(.white, in: RoundedRectangle(cornerRadius: 16))
     }
 }
 
 #Preview {
-    RecommendationTextCard()
+    Background {
+        RecommendationTextCard()
+    }
 }

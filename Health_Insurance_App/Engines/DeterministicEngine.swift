@@ -17,6 +17,7 @@ struct DeterministicEngine {
             deductible: 3000.00,
             premium: 400.00,
             isRecommended: false,
+            url: "https://www.bcbs.com/"
         ),
         
         PlanVars(
@@ -25,6 +26,7 @@ struct DeterministicEngine {
             deductible: 3200.00,
             premium: 375.00,
             isRecommended: false,
+            url: "https://highmark.com/"
         ),
         
         PlanVars(
@@ -33,6 +35,7 @@ struct DeterministicEngine {
             deductible: 3500.00,
             premium: 315.00,
             isRecommended: true,
+            url: "https://www.aetna.com/"
         ),
         
         PlanVars(
@@ -41,6 +44,7 @@ struct DeterministicEngine {
             deductible: 3800.00,
             premium: 250.00,
             isRecommended: false,
+            url: "https://www.humana.com/"
         ),
         
         PlanVars(
@@ -49,6 +53,7 @@ struct DeterministicEngine {
             deductible: 4000.00,
             premium: 215.00,
             isRecommended: false,
+            url: "https://www.aetna.com/"
         )
     ]
 }

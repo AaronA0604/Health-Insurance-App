@@ -14,7 +14,7 @@ struct PredictionsView: View {
         Background {
             ScrollView {
                 VStack(spacing: 16) {
-                    ForEach(Array(vm.predictions)) { prediction in
+                    ForEach(vm.predictions) { prediction in
                         CareLevelCard(spending: prediction)
                     }
                 }
@@ -26,6 +26,8 @@ struct PredictionsView: View {
 }
 
 #Preview {
+    @Previewable @State var review = Review.empty
+    
     NavigationStack {
         PredictionsView()
     }

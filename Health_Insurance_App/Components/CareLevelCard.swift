@@ -7,8 +7,20 @@
 
 import SwiftUI
 
+
 struct CareLevelCard: View {
     let spending: SpendingVars
+    
+    var rows: [(label: String, value: Decimal)] {
+        [
+            ("General Practitioner", spending.genPrac),
+            ("Specialist", spending.specialist),
+            ("Hospital", spending.hospital),
+            ("Pharmacy", spending.pharmacy),
+            ("Lab", spending.lab),
+            ("Total", spending.total)
+        ]
+    }
     
     var body: some View {
         VStack {
@@ -17,49 +29,79 @@ struct CareLevelCard: View {
                     .font(.headline)
                 Spacer()
             }
-            Divider()
-            HStack {
-                Text("General Pracitioner")
-                Spacer()
-                Text(spending.genPrac, format: .currency(code: "USD"))
-            }
-            Divider()
-            HStack {
-                Text("Specialist")
-                Spacer()
-                Text(spending.specialist, format: .currency(code: "USD"))
-            }
-            Divider()
-            HStack {
-                Text("Hospital")
-                Spacer()
-                Text(spending.hospital, format: .currency(code: "USD"))
-            }
-            Divider()
-            HStack {
-                Text("Pharmacy")
-                Spacer()
-                Text(spending.pharmacy, format: .currency(code: "USD"))
-            }
-            Divider()
-            HStack {
-                Text("Lab")
-                Spacer()
-                Text(spending.lab, format: .currency(code: "USD"))
-            }
-            Divider()
-            HStack {
-                Text("Total")
-                Spacer()
-                Text(spending.total, format: .currency(code: "USD"))
+
+            ForEach(rows.indices, id: \.self) { index in
+                Divider()
+                HStack {
+                    Text(rows[index].label)
+                    Spacer()
+                    Text(rows[index].value, format:.currency(code: "USD"))
+                }
             }
         }
         .padding(.vertical, 16)
         .padding(.horizontal, 16)
         .background(.white, in: RoundedRectangle(cornerRadius: 16))
-
     }
 }
+
+
+
+//struct CareLevelCard: View {
+//    let spending: SpendingVars
+//    
+//    var body: some View {
+//        VStack {
+//            List {
+//                HStack {
+//                    Text(spending.level)
+//                        .font(.headline)
+//                    Spacer()
+//                }
+//                Divider()
+//                HStack {
+//                    Text("General Pracitioner")
+//                    Spacer()
+//                    Text(spending.genPrac, format: .currency(code: "USD"))
+//                }
+//                Divider()
+//                HStack {
+//                    Text("Specialist")
+//                    Spacer()
+//                    Text(spending.specialist, format: .currency(code: "USD"))
+//                }
+//                Divider()
+//                HStack {
+//                    Text("Hospital")
+//                    Spacer()
+//                    Text(spending.hospital, format: .currency(code: "USD"))
+//                }
+//                Divider()
+//                HStack {
+//                    Text("Pharmacy")
+//                    Spacer()
+//                    Text(spending.pharmacy, format: .currency(code: "USD"))
+//                }
+//                Divider()
+//                HStack {
+//                    Text("Lab")
+//                    Spacer()
+//                    Text(spending.lab, format: .currency(code: "USD"))
+//                }
+//                Divider()
+//                HStack {
+//                    Text("Total")
+//                    Spacer()
+//                    Text(spending.total, format: .currency(code: "USD"))
+//                }
+//            }
+//        }
+//        .padding(.vertical, 16)
+//        .padding(.horizontal, 16)
+//        .background(.white, in: RoundedRectangle(cornerRadius: 16))
+//
+//    }
+//}
 
 #Preview {
     Background {

@@ -26,7 +26,7 @@ struct HealthField<Content: View>: View {
         }
         .padding(.vertical, 24)
         .padding(.horizontal, 16)
-        .background(.white, in: RoundedRectangle(cornerRadius: 12))
+        .background(.white, in: RoundedRectangle(cornerRadius: 16))
     }
 }
 

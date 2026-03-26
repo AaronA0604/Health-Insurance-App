@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var healthInfo = HealthInfo(
+    @State private var healthInfo: HealthInfo
+
+    init(healthInfo: HealthInfo = HealthInfo(
         sex: .male,
-        birthday: Calendar.current.date(from: DateComponents(year: 2000, month: 1, day: 1)
-        )!
-    )
+        birthday: Calendar.current.date(from: DateComponents(year: 2000, month: 1, day: 1))!
+    )) {
+        _healthInfo = State(initialValue: healthInfo)
+    }
     
     var body: some View {
         TabView() {
@@ -30,5 +33,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(healthInfo: HealthInfo.sample)
 }
