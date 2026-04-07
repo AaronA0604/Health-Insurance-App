@@ -50,6 +50,8 @@ struct PlanDetailsView: View {
                                 .environmentObject(reviewManager)
                         }
                     }
+                    
+                    PlanReviews()
                 }
                 .padding(.horizontal)
             }

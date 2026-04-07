@@ -9,31 +9,68 @@ import SwiftUI
 
 struct PlanReviews: View {
     @EnvironmentObject var reviewManager: ReviewManager
-    let planID: String
     
     var body: some View {
-        List {
-            ForEach(reviewManager.reviews(for: planID), id: \.id) { review in
-                VStack(alignment: .leading, spacing: 6) {
-                    
-                    Text("Network Coverage: \(review.netCov)")
+        VStack(spacing: 16) {
+            ForEach(reviewManager.filteredReviews, id: \.id) { review in
+                VStack(alignment: .leading) {
+                    Text("Network Coverage:")
+                        .bold()
+                    HStack {
+                        ForEach(1...5, id: \.self) { index in
+                            Image(systemName: index <= review.netCov ? "star.fill" : "star")
+                                .foregroundColor(.yellow)
+                                .font(.system(size: 32))
+                                .frame(maxWidth: .infinity)
+                        }
+                    }
+                    .frame(height: 50)
                     Text(review.netCovText)
-                    Text("Communication: \(review.com)")
+                    Divider()
+                    
+                    Text("Communication:")
+                        .bold()
+                    HStack {
+                        ForEach(1...5, id: \.self) { index in
+                            Image(systemName: index <= review.com ? "star.fill" : "star")
+                                .foregroundColor(.yellow)
+                                .font(.system(size: 32))
+                                .frame(maxWidth: .infinity)
+                        }
+                    }
+                    .frame(height: 50)
                     Text(review.comText)
-                    Text("Customer Service: \(review.service)")
+                    Divider()
+                    
+                    Text("Customer Service:")
+                        .bold()
+                    HStack {
+                        ForEach(1...5, id: \.self) { index in
+                            Image(systemName: index <= review.service ? "star.fill" : "star")
+                                .foregroundColor(.yellow)
+                                .font(.system(size: 32))
+                                .frame(maxWidth: .infinity)
+                        }
+                    }
+                    .frame(height: 50)
                     Text(review.serviceText)
                     
                     Text(review.date, style: .date)
                         .font(.caption)
                         .foregroundColor(.gray)
+                        .frame(maxWidth: .infinity, alignment: .center)
                 }
-                .padding(.vertical, 4)
+                .padding(.vertical, 16)
+                .padding(.horizontal, 16)
+                .background(.white, in: RoundedRectangle(cornerRadius: 16))
             }
         }
     }
 }
 
 #Preview {
-    PlanReviews(planID: "samplePlan")
-        .environmentObject(ReviewManager())
+    Background {
+        PlanReviews()
+            .environmentObject(ReviewManager.preview)
+    }
 }
