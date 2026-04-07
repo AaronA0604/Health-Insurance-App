@@ -51,7 +51,6 @@ extension View {
 // Preview
 #Preview {
     ZStack {
-        // A moving background is essential for the glass effect to be visible
         Color.blue.ignoresSafeArea()
         
         LiquidGlass(tint: .purple, isInteractive: true) {

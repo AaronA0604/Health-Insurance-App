@@ -1,5 +1,5 @@
 //
-//  WheelType.swift
+//  ActiveWheel.swift
 //  Health_Insurance_App
 //
 //  Created by Aaron Aslan on 3/30/26.
@@ -13,14 +13,3 @@ enum ActiveWheel: Hashable {
     case prescriptions
     case height
 }
-
-
-
-//enum WheelType: String, CaseIterable, Identifiable {
-//    case prescriptions
-//    case weight
-//    
-//    var id: String {
-//        rawValue
-//    }
-//}
