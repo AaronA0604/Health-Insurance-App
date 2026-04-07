@@ -32,10 +32,11 @@ struct RecommendationView: View {
 
     private var popupOverlay: some View {
         ZStack {
-            Color.black.opacity(0.001)
+            Color.clear
+                .contentShape(Rectangle())
                 .ignoresSafeArea()
                 .onTapGesture {
-                    withAnimation(.spring(response: 0.25, dampingFraction: 0.85)) {
+                    withAnimation(.easeInOut) {
                         showPopup = false
                     }
                 }
