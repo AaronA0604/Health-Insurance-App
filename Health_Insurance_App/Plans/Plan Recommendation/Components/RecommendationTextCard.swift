@@ -17,7 +17,7 @@ struct RecommendationTextCard: View {
             Spacer()
         }
         .padding()
-        .background(.white, in: RoundedRectangle(cornerRadius: 16))
+        .background(Color(.systemGray6), in: RoundedRectangle(cornerRadius: 16))
     }
 }
 

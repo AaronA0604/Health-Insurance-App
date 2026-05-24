@@ -9,9 +9,10 @@ import SwiftUI
 
 struct PlanReviews: View {
     @EnvironmentObject var reviewManager: ReviewManager
+    let planID: String
     
     var body: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: 12) {
             ForEach(reviewManager.filteredReviews, id: \.id) { review in
                 VStack(alignment: .leading) {
                     Text("Network Coverage:")
@@ -60,17 +61,22 @@ struct PlanReviews: View {
                         .foregroundColor(.gray)
                         .frame(maxWidth: .infinity, alignment: .center)
                 }
-                .padding(.vertical, 16)
-                .padding(.horizontal, 16)
-                .background(.white, in: RoundedRectangle(cornerRadius: 16))
+                .padding()
+                .background(Color(.systemGray6), in: RoundedRectangle(cornerRadius: 16))
             }
+            
+            // TODO: maybe add a show more button
+        }
+        .onAppear {
+            reviewManager.selectedPlanID = planID
+            
         }
     }
 }
 
 #Preview {
     Background {
-        PlanReviews()
-            .environmentObject(ReviewManager.preview)
+        PlanReviews(planID: "001")
+            .environmentObject(ReviewManager())
     }
 }

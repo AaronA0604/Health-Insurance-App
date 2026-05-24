@@ -39,8 +39,7 @@ struct CareLevelCard: View {
                 }
             }
         }
-        .padding(.vertical, 16)
-        .padding(.horizontal, 16)
+        .padding()
         .background(.white, in: RoundedRectangle(cornerRadius: 16))
     }
 }

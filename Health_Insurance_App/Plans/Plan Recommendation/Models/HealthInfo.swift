@@ -19,6 +19,7 @@ struct HealthInfo {
     var weight: Int = 150
     var ZIPCode: String = ""
 
+    // TODO: maybe make the sample variable here have the same logic as the isPreview variable in ReviewManager or vice versa
     static var sample: HealthInfo {
         let calendar = Calendar.current
         let sampleDate = calendar.date(from: DateComponents(year: 1982, month: 6, day: 12))!

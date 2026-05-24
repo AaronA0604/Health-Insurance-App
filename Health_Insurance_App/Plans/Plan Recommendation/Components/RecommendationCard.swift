@@ -37,9 +37,6 @@ struct RecommendationCard: View {
             .background(
                 RoundedRectangle(cornerRadius: 16)
                     .fill(.white)
-            )
-            .overlay(
-                RoundedRectangle(cornerRadius: 16)
                     .stroke(border, lineWidth: 4)
             )
             
@@ -62,6 +59,7 @@ struct RecommendationCard: View {
     Background {
         RecommendationCard(
             recommendation: RecommendationCardVars(
+                id: "002",
                 planName: "Sample Plan",
                 deductible: 3200,
                 premium: 375,

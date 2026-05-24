@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// TODO: add comments everywhere to explain code
 struct ContentView: View {
     @State private var healthInfo: HealthInfo
 

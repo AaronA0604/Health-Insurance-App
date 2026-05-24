@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 struct RecommendationCardVars: Identifiable {
-    var id = UUID()
-    
+    var id: String
+    // TODO: make id a UUID() that persists through a database
     var planName: String
     var deductible: Decimal
     var premium: Decimal

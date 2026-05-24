@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CostDetailsCard: View {
-    let plan: PlanVars
+    let plan: RecommendationPlanVars
     
     var body: some View {
         HStack {
@@ -22,14 +22,15 @@ struct CostDetailsCard: View {
             Spacer()
         }
         .padding()
-        .background(.white, in: RoundedRectangle(cornerRadius: 16))
+        .background(Color(.systemGray6), in: RoundedRectangle(cornerRadius: 16))
     }
 }
 
 #Preview {
     Background {
         CostDetailsCard(
-            plan: PlanVars(
+            plan: RecommendationPlanVars(
+                id: "003",
                 planName: "Sample Plan",
                 coName: "Aetna",
                 deductible: 3500.00,
