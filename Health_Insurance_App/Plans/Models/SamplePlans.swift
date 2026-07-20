@@ -18,7 +18,14 @@ struct SamplePlans {
             coName: "Blue Cross",
             deductible: 3000.00,
             premium: 400.00,
-            url: "https://www.bcbs.com/"
+            url: "https://www.bcbs.com/",
+            oopMax: 7000.00,
+            networkType: .ppo,
+            riskProfile: .hplr,
+            drugCoverage: .standard,
+            utilizationFit: .high,
+            coverageScope: .national,
+            coverageStrength: .standard
         ),
         
         PlanVars(
@@ -27,7 +34,14 @@ struct SamplePlans {
             coName: "Highmark",
             deductible: 3200.00,
             premium: 375.00,
-            url: "https://highmark.com/"
+            url: "https://highmark.com/",
+            oopMax: 7700.00,
+            networkType: .hmo,
+            riskProfile: .balanced,
+            drugCoverage: .poor,
+            utilizationFit: .low,
+            coverageScope: .national,
+            coverageStrength: .standard
         ),
         
         PlanVars(
@@ -36,7 +50,14 @@ struct SamplePlans {
             coName: "Aetna",
             deductible: 3500.00,
             premium: 315.00,
-            url: "https://www.aetna.com/"
+            url: "https://www.aetna.com/",
+            oopMax: 7200.00,
+            networkType: .hmo,
+            riskProfile: .balanced,
+            drugCoverage: .standard,
+            utilizationFit: .medium,
+            coverageScope: .regional,
+            coverageStrength: .weak
         ),
         
         PlanVars(
@@ -45,7 +66,14 @@ struct SamplePlans {
             coName: "Humana",
             deductible: 3800.00,
             premium: 250.00,
-            url: "https://www.humana.com/"
+            url: "https://www.humana.com/",
+            oopMax: 8000.00,
+            networkType: .pos,
+            riskProfile: .lphr,
+            drugCoverage: .strong,
+            utilizationFit: .veryHigh,
+            coverageScope: .national,
+            coverageStrength: .strong
         ),
         
         PlanVars(
@@ -54,7 +82,14 @@ struct SamplePlans {
             coName: "Aetna",
             deductible: 4000.00,
             premium: 215.00,
-            url: "https://www.aetna.com/"
+            url: "https://www.aetna.com/",
+            oopMax: 8250.00,
+            networkType: .indemity,
+            riskProfile: .lphr,
+            drugCoverage: .poor,
+            utilizationFit: .medium,
+            coverageScope: .regional,
+            coverageStrength: .standard
         ),
         
         PlanVars(
@@ -63,16 +98,30 @@ struct SamplePlans {
             coName: "Humana",
             deductible: 3200.00,
             premium: 400.00,
-            url: "https://www.humana.com/"
+            url: "https://www.humana.com/",
+            oopMax: 7000.00,
+            networkType: .ppo,
+            riskProfile: .hplr,
+            drugCoverage: .standard,
+            utilizationFit: .low,
+            coverageScope: .local,
+            coverageStrength: .weak
         ),
         
         PlanVars(
             id: "007",
             planName: "Sample Plan",
             coName: "Blue Cross",
-            deductible: 3600.00,
+            deductible: 3800.00,
             premium: 210.00,
-            url: "https://www.bcbs.com/"
+            url: "https://www.bcbs.com/",
+            oopMax: 7500.00,
+            networkType: .hmo,
+            riskProfile: .lphr,
+            drugCoverage: .veryStrong,
+            utilizationFit: .low,
+            coverageScope: .national,
+            coverageStrength: .strong
         ),
         
         PlanVars(
@@ -81,7 +130,14 @@ struct SamplePlans {
             coName: "Aetna",
             deductible: 4100.00,
             premium: 190.00,
-            url: "https://www.aetna.com/"
+            url: "https://www.aetna.com/",
+            oopMax: 8000.00,
+            networkType: .pffs,
+            riskProfile: .lphr,
+            drugCoverage: .strong,
+            utilizationFit: .medium,
+            coverageScope: .regional,
+            coverageStrength: .standard
         )
     ]
 }
