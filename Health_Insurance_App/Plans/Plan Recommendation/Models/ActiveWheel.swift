@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 enum ActiveWheel: Hashable {
     case weight
     case prescriptions
