@@ -20,9 +20,8 @@ struct PlanVars: Identifiable {
     
     
     // vars for specific plan details
+    // TODO: add all variables for specific plan details that the user would want to know. Make sure each variable is consistent throughout every single plan. These variables can be found in the Insurance Plan Types conversation with ChatGPT under aaron.aslan@jbha.org.
     var oopMax: Decimal
-    var metalTier: MetalTier
-    
     
     
     // vars for computing categorical values below
@@ -41,23 +40,24 @@ struct PlanVars: Identifiable {
     }
     
     // vars for computing drugCoverage
-    var formularyCoverageRate: Decimal   // % of common drugs covered
-    var avgDrugCoinsurance: Decimal
-    var avgDrugCopay: Decimal
-    var specialtyDrugCoverage: Decimal
+    // TODO: uncomment these variables and use them to compute their respective variables after you have the list of all the specific variables. Some of these variables may have to change.
+//    var formularyCoverageRate: Decimal   // % of common drugs covered
+//    var avgDrugCoinsurance: Decimal
+//    var avgDrugCopay: Decimal
+//    var specialtyDrugCoverage: Decimal
     
     // vars for computing utilizationFit
-    var avgCopay: Decimal
-    var avgCoinsuranceRate: Decimal
+//    var avgCopay: Decimal
+//    var avgCoinsuranceRate: Decimal
     
     // vars for computing coverageScope
-    var networkStatesCovered: Int
+//    var networkStatesCovered: Int
     
-    // vars for computnig coverageStrength
-    var preventiveCostSharing: Decimal
-    var mentalHealthCopay: Decimal
-    var specialistCopay: Decimal
-    var chronicCoinsurance: Decimal
+    // vars for computing coverageStrength
+//    var preventiveCostSharing: Decimal
+//    var mentalHealthCopay: Decimal
+//    var specialistCopay: Decimal
+//    var chronicCoinsurance: Decimal
     
     // vars for categories in plan selection (also displayed in specific plan details)
     // TODO: maybe add a category for the plan source - e.g. ACA, non-ACA, medicare, etc.
