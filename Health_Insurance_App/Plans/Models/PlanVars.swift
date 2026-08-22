@@ -66,6 +66,5 @@ struct PlanVars: Identifiable {
     var drugCoverage: DrugCoverage  // how good the prescription coverage is
     var utilizationFit: UtilizationFit  // what usage level the plan is optimized for
     var coverageScope: CoverageScope    // how large the coverage area is
-    var coverageStrength: CoverageStrength  // how strong coverage is across categories
     // TODO: add other variables as needed
 }

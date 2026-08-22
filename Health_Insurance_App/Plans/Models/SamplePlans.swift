@@ -25,7 +25,6 @@ struct SamplePlans {
             drugCoverage: .standard,
             utilizationFit: .high,
             coverageScope: .national,
-            coverageStrength: .standard
         ),
         
         PlanVars(
@@ -41,7 +40,6 @@ struct SamplePlans {
             drugCoverage: .poor,
             utilizationFit: .low,
             coverageScope: .national,
-            coverageStrength: .standard
         ),
         
         PlanVars(
@@ -57,7 +55,6 @@ struct SamplePlans {
             drugCoverage: .standard,
             utilizationFit: .medium,
             coverageScope: .regional,
-            coverageStrength: .weak
         ),
         
         PlanVars(
@@ -73,7 +70,6 @@ struct SamplePlans {
             drugCoverage: .strong,
             utilizationFit: .veryHigh,
             coverageScope: .national,
-            coverageStrength: .strong
         ),
         
         PlanVars(
@@ -89,7 +85,6 @@ struct SamplePlans {
             drugCoverage: .poor,
             utilizationFit: .medium,
             coverageScope: .regional,
-            coverageStrength: .standard
         ),
         
         PlanVars(
@@ -105,7 +100,6 @@ struct SamplePlans {
             drugCoverage: .standard,
             utilizationFit: .low,
             coverageScope: .local,
-            coverageStrength: .weak
         ),
         
         PlanVars(
@@ -121,7 +115,6 @@ struct SamplePlans {
             drugCoverage: .veryStrong,
             utilizationFit: .low,
             coverageScope: .national,
-            coverageStrength: .strong
         ),
         
         PlanVars(
@@ -137,7 +130,6 @@ struct SamplePlans {
             drugCoverage: .strong,
             utilizationFit: .medium,
             coverageScope: .regional,
-            coverageStrength: .standard
         )
     ]
 }
