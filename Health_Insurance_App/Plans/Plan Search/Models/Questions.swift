@@ -14,7 +14,7 @@ struct QuestionVars {
 
 struct Questions {
     // TODO: have other people read over each question and answer to make sure it is simple and clear
-    static let questions: [QuestionVars] = [
+    let questions: [QuestionVars] = [
         // network type
         QuestionVars(
             question: "Are you okay with only seeing doctors that are in your insurance network?",
