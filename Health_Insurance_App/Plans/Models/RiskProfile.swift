@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum RiskProfile: String, Identifiable, CaseIterable {
+enum RiskProfile: String, Identifiable, CaseIterable, Hashable {
     case lphr   // low premium and high risk
     case balanced   // in the middle
     case hplr   // high premium and low risk

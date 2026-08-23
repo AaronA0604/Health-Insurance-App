@@ -9,7 +9,7 @@ import Foundation
 
 import Foundation
 
-enum CoverageScope: String, Identifiable, CaseIterable {
+enum CoverageScope: String, Identifiable, CaseIterable, Hashable {
     case local
     case regional
     case national

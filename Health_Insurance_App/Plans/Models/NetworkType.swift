@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum NetworkType: String, Identifiable, CaseIterable {
+enum NetworkType: String, Identifiable, CaseIterable, Hashable {
     case hmo
     case ppo
     case epo

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum UtilizationFit: String, Identifiable, CaseIterable {
+enum UtilizationFit: String, Identifiable, CaseIterable, Hashable {
     case low
     case medium
     case high

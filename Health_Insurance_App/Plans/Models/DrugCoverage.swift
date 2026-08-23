@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum DrugCoverage: String, Identifiable, CaseIterable {
+enum DrugCoverage: String, Identifiable, CaseIterable, Hashable {
     case poor
     case standard
     case strong
