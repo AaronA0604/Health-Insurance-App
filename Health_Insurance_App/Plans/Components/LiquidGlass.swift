@@ -49,18 +49,20 @@ extension View {
 
 // Preview
 #Preview {
-    Background {
-        ZStack {
-            Image(systemName: "scribble.variable")
-                .resizable()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-            
-            LiquidGlass(isInteractive: true) {
-                VStack {
-                    Text("Liquid Glass")
-                        .font(.title2)
-                    Text("Lorem ipsum.")
-                        .font(.body)
+    NavigationStack {
+        Background {
+            ZStack {
+                Image(systemName: "scribble.variable")
+                    .resizable()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                
+                LiquidGlass(isInteractive: true) {
+                    VStack {
+                        Text("Liquid Glass")
+                            .font(.title2)
+                        Text("Lorem ipsum.")
+                            .font(.body)
+                    }
                 }
             }
         }

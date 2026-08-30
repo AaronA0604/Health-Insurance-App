@@ -21,6 +21,7 @@ struct HealthInfoView: View {
             doubleIsExpanded = false
         }
         // TODO: make animation better and consistent throughout app
+        // make each comment a mark comment
     }
     
     var body: some View {

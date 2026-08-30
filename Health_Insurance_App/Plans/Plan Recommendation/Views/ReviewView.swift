@@ -95,8 +95,8 @@ struct ReviewView: View {
                     .disabled(!formIsComplete)
                 }
             }
+            .navigationTitle("Leave a Review")
         }
-        .navigationTitle("Leave a Review")
     }
 }
 

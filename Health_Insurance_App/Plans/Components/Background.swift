@@ -25,8 +25,10 @@ struct Background<Content: View>: View {
 }
 
 #Preview {
-    Background {
-        Text("Hello World")
+    NavigationStack {
+        Background {
+            Text("Hello World")
+        }
     }
 }
 

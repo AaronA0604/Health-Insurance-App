@@ -89,12 +89,14 @@ struct DoubleWheelButton: View {
 }
 
 #Preview {
-    WheelButton(
-        label: "Weight",
-        selection: .constant(150),
-        unit: "pounds",
-        isExpanded: .constant(false),
-        type: .weight,
-        activeWheel: .constant(.weight)
-    )
+    Background {
+        WheelButton(
+            label: "Weight",
+            selection: .constant(150),
+            unit: "pounds",
+            isExpanded: .constant(false),
+            type: .weight,
+            activeWheel: .constant(.weight)
+        )
+    }
 }

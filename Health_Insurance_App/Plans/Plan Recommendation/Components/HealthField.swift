@@ -31,9 +31,11 @@ struct HealthField<Content: View>: View {
 }
 
 #Preview {
-    Background {
-        HealthField(iconName: "person.fill", label: "Label") {
-            Text("Content")
+    NavigationStack {
+        Background {
+            HealthField(iconName: "person.fill", label: "Label") {
+                Text("Content")
+            }
         }
     }
 }

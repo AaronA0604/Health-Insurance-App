@@ -47,7 +47,9 @@ struct InfoPopup: View {
 }
 
 #Preview {
-    Background {
-        InfoPopup()
+    NavigationStack {
+        Background {
+            InfoPopup()
+        }
     }
 }

@@ -33,7 +33,7 @@ struct RecommendationView: View {
                             }
                             .tint(.primary)
                         }
-
+                        
                         NavigationLink {
                             PredictionsView()
                         } label: {
@@ -56,7 +56,7 @@ struct RecommendationView: View {
                             }
                         }
                     }
-
+                    
                     if showPopup {
                         ZStack {
                             Color.clear
@@ -67,7 +67,7 @@ struct RecommendationView: View {
                                         showPopup = false
                                     }
                                 }
-
+                            
                             VStack {
                                 HStack {
                                     Spacer()
