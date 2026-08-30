@@ -9,26 +9,27 @@ import SwiftUI
 
 struct QuestionCard: View {
     var question: String
-    var answers: [String]
-    var answerSelected: (String) -> Void
+    var answers: [Answer]
+    var answerSelected: (Answer) -> Void
     
     var body: some View {
         VStack (alignment: .leading) {
             Text(question)
                 .font(.title3)
             
-            ForEach(answers, id: \.self) { answer in
+            ForEach(answers, id: \.text) { answer in
                 Button {
                     answerSelected(answer)
                 } label: {
                     HStack {
-                        Text(answer)
+                        Text(answer.text)
                             .padding()
+                            .foregroundStyle(.white)
                     }
                     .frame(maxWidth: .infinity)
                     .background(
                         RoundedRectangle(cornerRadius: 16)
-                            .stroke(.tint, lineWidth: 4)
+                            .fill(.tint)
                     )
                 }
                 .buttonStyle(.plain)
@@ -46,8 +47,8 @@ struct QuestionCard: View {
 #Preview {
     Background {
         QuestionCard(
-            question: "How often do you usually visit doctors or other healthcare providers in a typical year?",
-            answers: ["Rarely (1-2 visits)", "Occasionally (3-5 visits)", "Often (6-10 visits)", "Very often (10+ visits or ongoing treatment)"],
+            question: Questions().questions[0].question,
+            answers: Questions().questions[0].answers,
             answerSelected: { _ in }
         )
     }

@@ -6,24 +6,33 @@
 //
 
 import SwiftUI
-
 // TODO: add comments everywhere to explain code
+// TODO: add information popups that explain use of pages
+// TODO: make home page
+
 struct ContentView: View {
     @State private var healthInfo: HealthInfo
 
     init(healthInfo: HealthInfo = HealthInfo(
         sex: .male,
-        birthday: Calendar.current.date(from: DateComponents(year: 2000, month: 1, day: 1))!
+        birthday: Calendar.current.date(
+            from: DateComponents(year: 2000, month: 1, day: 1)
+        )!
     )) {
         _healthInfo = State(initialValue: healthInfo)
     }
-    
+
     var body: some View {
-        TabView() {
+        TabView {
             NavigationStack {
-                VStack {
-                    HealthInfoView(healthInfo: $healthInfo)
-                }
+                HealthInfoView(healthInfo: $healthInfo)
+            }
+            .tabItem {
+                Label("Plans", systemImage: "cross.case.fill")
+            }
+            
+            NavigationStack {
+                PlanSearchView(questions: Questions())
             }
             .tabItem {
                 Label("Plans", systemImage: "cross.case.fill")
