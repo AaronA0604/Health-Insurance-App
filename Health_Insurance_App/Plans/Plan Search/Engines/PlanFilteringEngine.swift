@@ -11,9 +11,11 @@ internal import Combine
 class PlanFilteringEngine {
     // list of variables for plans that match the user's preferences
     @Published private(set) var qualifyingKeys: [ScoreCategory] = []
+    // list of plans that match the user's preferences
+    @Published private(set) var filteredPlans: [PlanVars] = []
     
     var scores = ScoreDictionary()
-    var vm = PlansViewModel()
+    private let allPlans: [PlanVars] = SamplePlans.plans
 
     // add variables to array based on scores
     func updateQualifyingVars() {
@@ -44,6 +46,39 @@ class PlanFilteringEngine {
             qualifyingKeys.append(.coverageScope(key))
         }
         
-        vm.filterPlans()
+        // call function to add plans to array
+        filterPlans()
+    }
+    
+    // add plans to array based on keys
+    func filterPlans() {
+        var networkTypeKeys: Set<NetworkType> = []
+        var riskProfileKeys: Set<RiskProfile> = []
+        var drugCoverageKeys: Set<DrugCoverage> = []
+        var utilizationFitKeys: Set<UtilizationFit> = []
+        var coverageScopeKeys: Set<CoverageScope> = []
+
+        for key in qualifyingKeys {
+            switch key {
+            case .networkType(let value):
+                networkTypeKeys.insert(value)
+            case .riskProfile(let value):
+                riskProfileKeys.insert(value)
+            case .drugCoverage(let value):
+                drugCoverageKeys.insert(value)
+            case .utilizationFit(let value):
+                utilizationFitKeys.insert(value)
+            case .coverageScope(let value):
+                coverageScopeKeys.insert(value)
+            }
+        }
+
+        filteredPlans = allPlans.filter { plan in
+            networkTypeKeys.contains(plan.networkType)
+            && riskProfileKeys.contains(plan.riskProfile)
+            && drugCoverageKeys.contains(plan.drugCoverage)
+            && utilizationFitKeys.contains(plan.utilizationFit)
+            && coverageScopeKeys.contains(plan.coverageScope)
+        }
     }
 }
