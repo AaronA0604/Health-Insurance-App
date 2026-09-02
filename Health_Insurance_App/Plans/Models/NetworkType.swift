@@ -12,7 +12,7 @@ enum NetworkType: String, Identifiable, CaseIterable, Hashable {
     case ppo
     case epo
     case pos
-    case indemity
+    case indemnity
     case pffs
     
     var id: String {

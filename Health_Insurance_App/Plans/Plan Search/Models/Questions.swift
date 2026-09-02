@@ -28,7 +28,7 @@ struct Questions {
                 Answer(
                     text: "No, that's not okay",
                     scoreChanges: ScoreDictionary(
-                        networkType: [.ppo: 5, .pos: 2, .indemity: 5, .pffs: 3],
+                        networkType: [.ppo: 5, .pos: 2, .indemnity: 5, .pffs: 3],
                         riskProfile: [:],
                         drugCoverage: [:],
                         utilizationFit: [:],
@@ -39,7 +39,7 @@ struct Questions {
                 Answer(
                     text: "Maybe",
                     scoreChanges: ScoreDictionary(
-                        networkType: [.hmo: 2, .ppo: 5, .epo: 2, .pos: 3, .indemity: 5, .pffs: 3],
+                        networkType: [.hmo: 2, .ppo: 5, .epo: 2, .pos: 3, .indemnity: 5, .pffs: 3],
                         riskProfile: [:],
                         drugCoverage: [:],
                         utilizationFit: [:],
@@ -50,7 +50,7 @@ struct Questions {
                 Answer(
                     text: "Yes, that's fine",
                     scoreChanges: ScoreDictionary(
-                        networkType: [.hmo: 5, .ppo: 5, .epo: 5, .pos: 5, .indemity: 5, .pffs: 5],
+                        networkType: [.hmo: 5, .ppo: 5, .epo: 5, .pos: 5, .indemnity: 5, .pffs: 5],
                         riskProfile: [:],
                         drugCoverage: [:],
                         utilizationFit: [:],
@@ -66,7 +66,7 @@ struct Questions {
                 Answer(
                     text: "No, that's not okay",
                     scoreChanges: ScoreDictionary(
-                        networkType: [.ppo: 5, .epo: 5, .pos: 2, .indemity: 5, .pffs: 5],
+                        networkType: [.ppo: 5, .epo: 5, .pos: 2, .indemnity: 5, .pffs: 5],
                         riskProfile: [:],
                         drugCoverage: [:],
                         utilizationFit: [:],
@@ -77,7 +77,7 @@ struct Questions {
                 Answer(
                     text: "Maybe",
                     scoreChanges: ScoreDictionary(
-                        networkType: [.hmo: 2, .ppo: 5, .epo: 5, .pos: 3, .indemity: 5, .pffs: 5],
+                        networkType: [.hmo: 2, .ppo: 5, .epo: 5, .pos: 3, .indemnity: 5, .pffs: 5],
                         riskProfile: [:],
                         drugCoverage: [:],
                         utilizationFit: [:],
@@ -88,7 +88,7 @@ struct Questions {
                 Answer(
                     text: "Yes, that's fine",
                     scoreChanges: ScoreDictionary(
-                        networkType: [.hmo: 5, .ppo: 5, .epo: 5, .pos: 5, .indemity: 5, .pffs: 5],
+                        networkType: [.hmo: 5, .ppo: 5, .epo: 5, .pos: 5, .indemnity: 5, .pffs: 5],
                         riskProfile: [:],
                         drugCoverage: [:],
                         utilizationFit: [:],
@@ -104,7 +104,7 @@ struct Questions {
                 Answer(
                     text: "Very important",
                     scoreChanges: ScoreDictionary(
-                        networkType: [.hmo: 1, .ppo: 5, .epo: 2, .pos: 4, .indemity: 5, .pffs: 4],
+                        networkType: [.hmo: 1, .ppo: 5, .epo: 2, .pos: 4, .indemnity: 5, .pffs: 4],
                         riskProfile: [:],
                         drugCoverage: [:],
                         utilizationFit: [:],
@@ -115,7 +115,7 @@ struct Questions {
                 Answer(
                     text: "Somewhat important",
                     scoreChanges: ScoreDictionary(
-                        networkType: [.hmo: 3, .ppo: 5, .epo: 3, .pos: 5, .indemity: 5, .pffs: 5],
+                        networkType: [.hmo: 3, .ppo: 5, .epo: 3, .pos: 5, .indemnity: 5, .pffs: 5],
                         riskProfile: [:],
                         drugCoverage: [:],
                         utilizationFit: [:],
@@ -126,7 +126,7 @@ struct Questions {
                 Answer(
                     text: "Not important",
                     scoreChanges: ScoreDictionary(
-                        networkType: [.hmo: 5, .ppo: 5, .epo: 5, .pos: 5, .indemity: 5, .pffs: 5],
+                        networkType: [.hmo: 5, .ppo: 5, .epo: 5, .pos: 5, .indemnity: 5, .pffs: 5],
                         riskProfile: [:],
                         drugCoverage: [:],
                         utilizationFit: [:],
@@ -142,7 +142,7 @@ struct Questions {
                 Answer(
                     text: "Yes, I would pay more",
                     scoreChanges: ScoreDictionary(
-                        networkType: [.hmo: 1, .ppo: 5, .epo: 2, .pos: 4, .indemity: 5, .pffs: 4],
+                        networkType: [.hmo: 1, .ppo: 5, .epo: 2, .pos: 4, .indemnity: 5, .pffs: 4],
                         riskProfile: [:],
                         drugCoverage: [:],
                         utilizationFit: [:],
@@ -153,7 +153,7 @@ struct Questions {
                 Answer(
                     text: "Maybe",
                     scoreChanges: ScoreDictionary(
-                        networkType: [.hmo: 3, .ppo: 3, .epo: 3, .pos: 3, .indemity: 3, .pffs: 3],
+                        networkType: [.hmo: 3, .ppo: 3, .epo: 3, .pos: 3, .indemnity: 3, .pffs: 3],
                         riskProfile: [:],
                         drugCoverage: [:],
                         utilizationFit: [:],
@@ -164,7 +164,7 @@ struct Questions {
                 Answer(
                     text: "No, I wouldn't pay more",
                     scoreChanges: ScoreDictionary(
-                        networkType: [.hmo: 5, .ppo: 2, .epo: 5, .pos: 2, .indemity: 2, .pffs: 2],
+                        networkType: [.hmo: 5, .ppo: 2, .epo: 5, .pos: 2, .indemnity: 2, .pffs: 2],
                         riskProfile: [:],
                         drugCoverage: [:],
                         utilizationFit: [:],

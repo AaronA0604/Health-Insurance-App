@@ -80,7 +80,7 @@ struct SamplePlans {
             premium: 215.00,
             url: "https://www.aetna.com/",
             oopMax: 8250.00,
-            networkType: .indemity,
+            networkType: .indemnity,
             riskProfile: .lphr,
             drugCoverage: .poor,
             utilizationFit: .medium,
