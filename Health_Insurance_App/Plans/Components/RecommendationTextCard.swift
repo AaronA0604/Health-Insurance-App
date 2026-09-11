@@ -8,10 +8,16 @@
 import SwiftUI
 
 struct RecommendationTextCard: View {
+    var recommended: Bool
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text(RecommendationTextGen.sample)
+                if recommended {
+                    Text(RecommendationTextGen.recommendationSample)
+                } else {
+                    Text(RecommendationTextGen.searchSample)
+                }
             }
             
             Spacer()
@@ -23,6 +29,6 @@ struct RecommendationTextCard: View {
 
 #Preview {
     Background {
-        RecommendationTextCard()
+        RecommendationTextCard(recommended: true)
     }
 }

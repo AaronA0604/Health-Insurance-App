@@ -53,7 +53,7 @@ struct PlanDetailsView: View {
                         Text("Why this plan is recommended for you")
                             .font(.title3)
                             .bold()
-                        RecommendationTextCard()
+                        RecommendationTextCard(recommended: <#Bool#>)
                     }
                     .padding()
                     .background(.white, in: RoundedRectangle(cornerRadius: 16))

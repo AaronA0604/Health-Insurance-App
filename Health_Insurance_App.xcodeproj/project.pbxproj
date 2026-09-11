@@ -27,11 +27,6 @@
 			path = Health_Insurance_App;
 			sourceTree = "<group>";
 		};
-		EE444E9C3042370D00816962 /* Health_Insurance_AppTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Health_Insurance_AppTests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				02F2976A2F3D436A0067A34E /* Health_Insurance_App */,
-				EE444E9C3042370D00816962 /* Health_Insurance_AppTests */,
 				02F297692F3D436A0067A34E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -107,9 +101,6 @@
 			);
 			dependencies = (
 				EE444EA03042370D00816962 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				EE444E9C3042370D00816962 /* Health_Insurance_AppTests */,
 			);
 			name = Health_Insurance_AppTests;
 			packageProductDependencies = (
