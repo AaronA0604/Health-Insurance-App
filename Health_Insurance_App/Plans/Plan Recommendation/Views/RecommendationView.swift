@@ -20,7 +20,7 @@ struct RecommendationView: View {
                     VStack {
                         ForEach(Array(vm.recommendationCardModels.enumerated()), id: \.element.id) { index, recommendation in
                             NavigationLink {
-                                PlanDetailsView(selection: index, recommended: true)
+                                PlanDetailsView(vm: vm, selection: index, recommended: true)
                             } label: {
                                 RecommendationCard(recommendation: recommendation, border: borderColor(for: index))
                             }

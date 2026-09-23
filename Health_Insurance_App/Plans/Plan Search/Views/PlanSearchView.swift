@@ -40,10 +40,10 @@ struct PlanSearchView: View {
                             )
                         }
                         .buttonStyle(.plain)
-                        
+                                                
                         ForEach(Array(plansVM.planCardModels.enumerated()), id: \.element.id) { index, plan in
                             NavigationLink() {
-                                PlanDetailsView(selection: index, recommended: false)
+                                PlanDetailsView(vm: plansVM, selection: index, recommended: false)
                             } label: {
                                 PlanCard(plan: plan)
                             }
