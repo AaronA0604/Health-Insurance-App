@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// TODO: make sure that the plans are displayed in the correct order (according to the color key)
+// TODO: add MARK comments
 struct RecommendationView: View {
     @StateObject var vm = PlansViewModel()
     @State private var showPopup = false
@@ -19,20 +19,13 @@ struct RecommendationView: View {
                 ZStack {
                     VStack {
                         ForEach(Array(vm.recommendationCardModels.enumerated()), id: \.element.id) { index, recommendation in
-                            let border: Color = {
-                                if index < 2 { return .purple }
-                                if index == 2 { return .blue }
-                                return .green
-                            }()
-                            
-                            
                             NavigationLink {
-                                PlanDetailsView(selection: index)
+                                PlanDetailsView(selection: index, recommended: true)
                             } label: {
-                                RecommendationCard(recommendation: recommendation, border: border)
+                                RecommendationCard(recommendation: recommendation, border: borderColor(for: index))
                             }
-                            .tint(.primary)
-                        }
+                                .tint(.primary)
+                            }
                         
                         NavigationLink {
                             PredictionsView()
@@ -58,6 +51,7 @@ struct RecommendationView: View {
                     }
                     
                     if showPopup {
+                        // TODO: make the color.clear expand to the edges of the screen
                         ZStack {
                             Color.clear
                                 .contentShape(Rectangle())
@@ -84,6 +78,12 @@ struct RecommendationView: View {
             }
             .navigationTitle("Recommendations")
         }
+    }
+    
+    private func borderColor(for index: Int) -> Color {
+        if index < 2 { return .purple }
+        if index == 2 { return .blue }
+        return .green
     }
 }
 
