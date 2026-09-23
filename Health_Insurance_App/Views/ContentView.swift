@@ -9,6 +9,7 @@ import SwiftUI
 // TODO: add comments everywhere to explain code
 // TODO: add information popups that explain use of pages
 // TODO: make home page
+// TODO: add progressViews() anywhere that it could be needed
 
 struct ContentView: View {
     @State private var healthInfo: HealthInfo
