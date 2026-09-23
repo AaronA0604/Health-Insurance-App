@@ -11,37 +11,23 @@ internal import Combine
 
 @MainActor
 class QuestionsViewModel: ObservableObject {
+    @Published var selectedAnswers: [Int: Answer] = [:]
+    
     let questions = Questions().questions
     @Published var questionIndex = 0
+    @Published var dismissQuestionnaire = false
+
     var currentQuestion: QuestionVars? {
         guard questions.indices.contains(questionIndex) else { return nil }
         return questions[questionIndex]
     }
-    var scores = ScoreDictionary()
-    @Published var dismissQuestionnaire = false
     
+    private let engine = PlanFilteringEngine()
+            
     func answerSelected(_ answer: Answer) {
-        // append scores
-        for (networkType, points) in answer.scoreChanges.networkType {
-            scores.networkType[networkType, default: 0] += points
-        }
-        
-        for (riskProfile, points) in answer.scoreChanges.riskProfile {
-            scores.riskProfile[riskProfile, default: 0] += points
-        }
-        
-        for (drugCoverage, points) in answer.scoreChanges.drugCoverage {
-            scores.drugCoverage[drugCoverage, default: 0] += points
-        }
-        
-        for (utilizationFit, points) in answer.scoreChanges.utilizationFit {
-            scores.utilizationFit[utilizationFit, default: 0] += points
-        }
-        
-        for (coverageScope, points) in answer.scoreChanges.coverageScope {
-            scores.coverageScope[coverageScope, default: 0] += points
-        }
-        
+        // keep track of answers
+        selectedAnswers[questionIndex] = answer
+                
         // go to next question
         questionIndex += 1
         
