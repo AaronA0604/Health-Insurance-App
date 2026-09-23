@@ -123,7 +123,7 @@ final class PlanFilteringEngine {
             }
         }
 
-        var filtered = allPlans.filter { plan in
+        let filtered = allPlans.filter { plan in
             networkTypeKeys.contains(plan.networkType)
             && riskProfileKeys.contains(plan.riskProfile)
             && drugCoverageKeys.contains(plan.drugCoverage)
