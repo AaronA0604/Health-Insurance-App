@@ -8,77 +8,129 @@
 import Foundation
 internal import Combine
 
-class PlanFilteringEngine {
-    // list of variables for plans that match the user's preferences
-    @Published private(set) var qualifyingKeys: [ScoreCategory] = []
-    // list of plans that match the user's preferences
-    @Published private(set) var filteredPlans: [PlanVars] = []
+final class PlanFilteringEngine {
+    // MARK: Add scores to dictionary
+    func updateScores(selectedAnswers: [Int: Answer]) -> ScoreDictionary {
+        var scores = ScoreDictionary()
+        
+        for (_, answer) in selectedAnswers {
+            for (networkType, points) in answer.scoreChanges.networkType {
+                scores.networkType[networkType, default: 0] += points
+            }
+            
+            for (riskProfile, points) in answer.scoreChanges.riskProfile {
+                scores.riskProfile[riskProfile, default: 0] += points
+            }
+            
+            for (drugCoverage, points) in answer.scoreChanges.drugCoverage {
+                scores.drugCoverage[drugCoverage, default: 0] += points
+            }
+            
+            for (utilizationFit, points) in answer.scoreChanges.utilizationFit {
+                scores.utilizationFit[utilizationFit, default: 0] += points
+            }
+            
+            for (coverageScope, points) in answer.scoreChanges.coverageScope {
+                scores.coverageScope[coverageScope, default: 0] += points
+            }
+        }
+        
+        return scores
+    }
     
-    var scores = ScoreDictionary()
-    private let allPlans: [PlanVars] = SamplePlans.plans
-
-    // add variables to array based on scores
-    func updateQualifyingVars() {
-        qualifyingKeys.removeAll() // avoid duplicates if called more than once
+    // MARK: Add keys to array
+    private func updateQualifyingKeys(scores: ScoreDictionary) -> [ScoreCategory] {
+        var keys: [ScoreCategory] = []
         
         // network type
-        for (key, value) in scores.networkType where value >= 14 {
-            qualifyingKeys.append(.networkType(key))
+        if scores.networkType.values.allSatisfy({ $0 == 0 }) {
+            for key in scores.networkType.keys {
+                keys.append(.networkType(key))
+            }
+        } else {
+            for (key, value) in scores.networkType where value >= 14 {
+                keys.append(.networkType(key))
+            }
         }
         
         // risk profile
-        for (key, value) in scores.riskProfile where value >= 5 {
-            qualifyingKeys.append(.riskProfile(key))
+        if scores.riskProfile.values.allSatisfy({ $0 == 0 }) {
+            for key in scores.riskProfile.keys {
+                keys.append(.riskProfile(key))
+            }
+        } else {
+            for (key, value) in scores.riskProfile where value >= 5 {
+                keys.append(.riskProfile(key))
+            }
         }
         
         // drug coverage
-        for (key, value) in scores.drugCoverage where value >= 5 {
-            qualifyingKeys.append(.drugCoverage(key))
+        if scores.drugCoverage.values.allSatisfy({ $0 == 0 }) {
+            for key in scores.drugCoverage.keys {
+                keys.append(.drugCoverage(key))
+            }
+        } else {
+            for (key, value) in scores.drugCoverage where value >= 5 {
+                keys.append(.drugCoverage(key))
+            }
         }
         
         // utilization fit
-        for (key, value) in scores.utilizationFit where value >= 4 {
-            qualifyingKeys.append(.utilizationFit(key))
+        if scores.utilizationFit.values.allSatisfy({ $0 == 0 }) {
+            for key in scores.utilizationFit.keys {
+                keys.append(.utilizationFit(key))
+            }
+        } else {
+            for (key, value) in scores.utilizationFit where value >= 5 {
+                keys.append(.utilizationFit(key))
+            }
         }
         
         // coverage scope
-        for (key, value) in scores.coverageScope where value >= 5 {
-            qualifyingKeys.append(.coverageScope(key))
+        if scores.coverageScope.values.allSatisfy({ $0 == 0 }) {
+            for key in scores.coverageScope.keys {
+                keys.append(.coverageScope(key))
+            }
+        } else {
+            for (key, value) in scores.coverageScope where value >= 5 {
+                keys.append(.coverageScope(key))
+            }
         }
-        
-        // call function to add plans to array
-        filterPlans()
+                
+        return keys
     }
     
-    // add plans to array based on keys
-    func filterPlans() {
+    // MARK: Add plans to array
+    func filterPlans(scores: ScoreDictionary) -> [PlanVars] {
+        // list of all the plans
+        let allPlans: [PlanVars] = SamplePlans.plans
+        
+        let keys = updateQualifyingKeys(scores: scores)
+        
         var networkTypeKeys: Set<NetworkType> = []
         var riskProfileKeys: Set<RiskProfile> = []
         var drugCoverageKeys: Set<DrugCoverage> = []
         var utilizationFitKeys: Set<UtilizationFit> = []
         var coverageScopeKeys: Set<CoverageScope> = []
 
-        for key in qualifyingKeys {
+        for key in keys {
             switch key {
-            case .networkType(let value):
-                networkTypeKeys.insert(value)
-            case .riskProfile(let value):
-                riskProfileKeys.insert(value)
-            case .drugCoverage(let value):
-                drugCoverageKeys.insert(value)
-            case .utilizationFit(let value):
-                utilizationFitKeys.insert(value)
-            case .coverageScope(let value):
-                coverageScopeKeys.insert(value)
+            case .networkType(let value): networkTypeKeys.insert(value)
+            case .riskProfile(let value): riskProfileKeys.insert(value)
+            case .drugCoverage(let value): drugCoverageKeys.insert(value)
+            case .utilizationFit(let value): utilizationFitKeys.insert(value)
+            case .coverageScope(let value): coverageScopeKeys.insert(value)
             }
         }
 
-        filteredPlans = allPlans.filter { plan in
+        var filtered = allPlans.filter { plan in
             networkTypeKeys.contains(plan.networkType)
             && riskProfileKeys.contains(plan.riskProfile)
             && drugCoverageKeys.contains(plan.drugCoverage)
             && utilizationFitKeys.contains(plan.utilizationFit)
             && coverageScopeKeys.contains(plan.coverageScope)
         }
+                
+        return filtered
     }
 }
