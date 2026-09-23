@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct PlanDetailsView: View {
-    @StateObject var vm = PlansViewModel()
-    @State private var showReview = false
+    @ObservedObject var vm: PlansViewModel
     @StateObject var reviewManager = ReviewManager()
+    
+    @State private var showReview = false
+
     var selection: Int
     var recommended: Bool
     
@@ -106,7 +108,7 @@ struct PlanDetailsView: View {
 
 #Preview {
     NavigationStack {
-        PlanDetailsView(selection: 0, recommended: true)
+        PlanDetailsView(vm: PlansViewModel(), selection: 0, recommended: true)
             .environmentObject({
                 let manager = ReviewManager()
                 manager.selectedPlanID = "001"
