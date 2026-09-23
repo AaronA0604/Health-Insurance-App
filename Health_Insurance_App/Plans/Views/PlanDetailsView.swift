@@ -22,7 +22,11 @@ struct PlanDetailsView: View {
                 VStack(alignment: .leading, spacing: 12) {
                     VStack {
                         // MARK: Deductible and premium information
-                        CostDetailsCard(plan: vm.recommendedPlans[selection])
+                        if recommended {
+                            CostDetailsCard(plan: vm.recommendedPlans[selection] as! CostDisplayable)
+                        } else {
+                            CostDetailsCard(plan: vm.filteredPlans[selection] as! CostDisplayable)
+                        }
                         
                         HStack {
                             // MARK: Link to provider's home page
