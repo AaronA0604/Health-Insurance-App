@@ -8,87 +8,137 @@
 import SwiftUI
 
 struct QuestionnaireSheetView: View {
-    @StateObject var vm = QuestionsViewModel()
+    @ObservedObject var vm: QuestionsViewModel
+    
     @State private var showQuestionnaire = false
-    @Environment(\.dismiss) private var dismiss
     let questions = Questions().questions
+    
+    @State private var questionTransition: AnyTransition = .move(edge: .trailing)
+    
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         NavigationStack {
-            if !showQuestionnaire {
-                VStack {
-                    Image(systemName: "questionmark.circle")
-                        .foregroundStyle(.tint)
-                        .font(.system(size: 100))
-                        .padding()
-                    Text("Before we can show you the health insurance plans that work best for you, answer these questions so we can get started. The questions will help us determine what types of plans fit you.")
-                        .font(.title3)
-                        .multilineTextAlignment(.center)
-                        .padding()
-                    Button {
-                        showQuestionnaire = true
-                    } label: {
-                        HStack {
-                            Text("Continue")
-                                .padding()
-                                .foregroundStyle(.white)
-                        }
-                        .frame(maxWidth: .infinity)
-                        .background(
-                            RoundedRectangle(cornerRadius: 16)
-                                .fill(.tint)
-                        )
-                    }
-                    .padding(.horizontal, 16)
-                }
-                .toolbar {
-                    // dismiss button
-                    ToolbarItem(placement: .topBarLeading) {
+            ZStack {
+                if !showQuestionnaire {
+                    // MARK: Intro
+                    VStack {
+                        Image(systemName: "questionmark.circle")
+                            .foregroundStyle(.tint)
+                            .font(.system(size: 100))
+                            .padding()
+                        
+                        Text("Before we can show you the health insurance plans that work best for you, answer these questions so we can get started. The questions will help us determine what types of plans fit you.")
+                            .font(.title3)
+                            .multilineTextAlignment(.center)
+                            .padding()
+                        
+                        // continue button
                         Button {
-                            dismiss()
-                        } label: {
-                            Image(systemName: "xmark")
-                        }
-                    }
-                }
-            } else {
-                VStack {
-                    if let question = vm.currentQuestion {
-                        QuestionCard(
-                            question: question.question,
-                            answers: question.answers
-                        ) { answer in
-                            vm.answerSelected(answer)
+                            // Moving forward into questionnaire
+                            questionTransition = .asymmetric(
+                                insertion: .move(edge: .trailing),
+                                removal: .move(edge: .leading)
+                            )
                             
-                            if vm.dismissQuestionnaire == true {
+                            withAnimation(.easeInOut(duration: 0.3)) {
+                                showQuestionnaire = true
+                            }
+                        } label: {
+                            HStack {
+                                Text("Continue")
+                                    .padding()
+                                    .foregroundStyle(.white)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .background(
+                                RoundedRectangle(cornerRadius: 16)
+                                    .fill(.tint)
+                            )
+                        }
+                        .padding(.horizontal, 16)
+                    }
+                    .transition(
+                        .asymmetric(
+                            insertion: .move(edge: .leading),
+                            removal: .move(edge: .leading)
+                        )
+                    )
+                    .toolbar {
+                        // dismiss button
+                        ToolbarItem(placement: .topBarLeading) {
+                            Button {
                                 dismiss()
+                            } label: {
+                                Image(systemName: "xmark")
                             }
                         }
-                    } else {                                            ProgressView()
                     }
-                    Spacer()
-                }
-                .toolbar {
-                    // back button
-                    ToolbarItem(placement: .topBarLeading) {
-                        Button {
-                            if vm.questionIndex == 0 {
-                                showQuestionnaire = false
+                } else {
+                    // MARK: Questions
+                    VStack {
+                        if let question = vm.currentQuestion {
+                            QuestionCard(
+                                question: question.question,
+                                answers: question.answers
+                            ) { answer in
+                                // forward transition
+                                questionTransition = .asymmetric(
+                                    insertion: .move(edge: .trailing),
+                                    removal: .move(edge: .leading)
+                                )
                                 
-                            } else {
-                                vm.questionIndex -= 1
+                                withAnimation(.easeInOut(duration: 0.3)) {
+                                    vm.answerSelected(answer)
+                                }
+                                
+                                if vm.dismissQuestionnaire == true {
+                                    dismiss()
+                                }
                             }
-                        } label: {
-                            Image(systemName: "chevron.left")
+                            .id(vm.questionIndex)
+                            .transition(questionTransition)
+                        } else {
+                            ProgressView()
                         }
+                        Spacer()
                     }
-                    
-                    // finish button
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button {
-                            dismiss()
-                        } label: {
-                            Image(systemName: "checkmark")
+                    .toolbar {
+                        ToolbarItem(placement: .topBarLeading) {
+                            Button {
+                                if vm.questionIndex == 0 {
+                                    // Return to introduction
+                                    questionTransition = .asymmetric(
+                                        insertion: .move(edge: .leading),
+                                        removal: .move(edge: .trailing)
+                                    )
+                                    
+                                    withAnimation(.easeInOut(duration: 0.3)) {
+                                        showQuestionnaire = false
+                                    }
+                                    
+                                } else {
+                                    // Move backward to previous question
+                                    questionTransition = .asymmetric(
+                                        insertion: .move(edge: .leading),
+                                        removal: .move(edge: .trailing)
+                                    )
+                                    
+                                    withAnimation(.easeInOut(duration: 0.3)) {
+                                        vm.questionIndex -= 1
+                                    }
+                                }
+                            } label: {
+                                Image(systemName: "chevron.left")
+                            }
+                        }
+                        
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Button {
+                                dismiss()
+                            } label: {
+                                Image(systemName: "checkmark")
+                            }
                         }
                     }
                 }
@@ -98,5 +148,5 @@ struct QuestionnaireSheetView: View {
 }
 
 #Preview {
-    QuestionnaireSheetView()
+    QuestionnaireSheetView(vm: QuestionsViewModel())
 }
