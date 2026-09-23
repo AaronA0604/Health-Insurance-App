@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct RecommendationCardVars: Identifiable {
+struct RecommendationCardVars: CostDisplayable, Identifiable {
     var id: String
     // TODO: make id a UUID() that persists through a database
     var planName: String
