@@ -12,6 +12,7 @@ struct PlanDetailsView: View {
     @State private var showReview = false
     @StateObject var reviewManager = ReviewManager()
     var selection: Int
+    var recommended: Bool
     
     var body: some View {
         Background {
@@ -49,14 +50,25 @@ struct PlanDetailsView: View {
                     .background(.white, in: RoundedRectangle(cornerRadius: 16))
                     
                     // MARK: Why plan is recommended
-                    VStack(alignment: .leading) {
-                        Text("Why this plan is recommended for you")
-                            .font(.title3)
-                            .bold()
-                        RecommendationTextCard(recommended: <#Bool#>)
+                    if recommended {
+                        VStack(alignment: .leading) {
+                            Text("Why this plan is recommended for you")
+                                .font(.title3)
+                                .bold()
+                            RecommendationTextCard(recommended: recommended)
+                        }
+                        .padding()
+                        .background(.white, in: RoundedRectangle(cornerRadius: 16))
+                    } else {
+                        VStack(alignment: .leading) {
+                            Text("Why this plan is recommended for you")
+                                .font(.title3)
+                                .bold()
+                            RecommendationTextCard(recommended: recommended)
+                        }
+                        .padding()
+                        .background(.white, in: RoundedRectangle(cornerRadius: 16))
                     }
-                    .padding()
-                    .background(.white, in: RoundedRectangle(cornerRadius: 16))
                     
                     // MARK: Reviews
                     VStack(alignment: .leading) {
@@ -94,7 +106,7 @@ struct PlanDetailsView: View {
 
 #Preview {
     NavigationStack {
-        PlanDetailsView(selection: 0)
+        PlanDetailsView(selection: 0, recommended: true)
             .environmentObject({
                 let manager = ReviewManager()
                 manager.selectedPlanID = "001"
