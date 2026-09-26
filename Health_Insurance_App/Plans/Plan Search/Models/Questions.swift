@@ -23,44 +23,6 @@ struct Questions {
     let questions: [QuestionVars] = [
         // MARK: network type
         QuestionVars(
-            question: "Are you okay with only seeing doctors that are in your insurance network?",
-            answers: [
-                Answer(
-                    text: "No, that's not okay",
-                    scoreChanges: ScoreDictionary(
-                        networkType: [.ppo: 5, .pos: 2, .indemnity: 5, .pffs: 3],
-                        riskProfile: [:],
-                        drugCoverage: [:],
-                        utilizationFit: [:],
-                        coverageScope: [:]
-                    )
-                ),
-                
-                Answer(
-                    text: "Maybe",
-                    scoreChanges: ScoreDictionary(
-                        networkType: [.hmo: 2, .ppo: 5, .epo: 2, .pos: 3, .indemnity: 5, .pffs: 3],
-                        riskProfile: [:],
-                        drugCoverage: [:],
-                        utilizationFit: [:],
-                        coverageScope: [:]
-                    )
-                ),
-                
-                Answer(
-                    text: "Yes, that's fine",
-                    scoreChanges: ScoreDictionary(
-                        networkType: [.hmo: 5, .ppo: 5, .epo: 5, .pos: 5, .indemnity: 5, .pffs: 5],
-                        riskProfile: [:],
-                        drugCoverage: [:],
-                        utilizationFit: [:],
-                        coverageScope: [:]
-                    )
-                )
-            ]
-        ),
-        
-        QuestionVars(
             question: "Are you okay with getting a referral from your primary care doctor before seeing a specialist?",
             answers: [
                 Answer(
@@ -137,7 +99,7 @@ struct Questions {
         ),
         
         QuestionVars(
-            question: "Would you pay a higher monthly premium for the freedom to choose from more doctors and hospitals?",
+            question: "Would you pay a higher monthly premium for the ability to choose from more doctors and hospitals?",
             answers: [
                 Answer(
                     text: "Yes, I would pay more",
