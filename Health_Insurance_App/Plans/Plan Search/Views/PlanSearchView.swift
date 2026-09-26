@@ -27,6 +27,7 @@ struct PlanSearchView: View {
                         Button {
                             showSheet = true
                             questionsVM.questionIndex = 0
+                            questionsVM.selectedAnswers = [:]
                         } label: {
                             HStack {
                                 Text("Retake Questionnaire")
