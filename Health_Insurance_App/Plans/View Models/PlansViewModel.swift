@@ -24,8 +24,10 @@ class PlansViewModel: ObservableObject {
             RecommendationCardVars(
                 id: plan.id,
                 planName: plan.planName,
+                coName: plan.coName,
                 deductible: plan.deductible,
                 premium: plan.premium,
+                url: plan.url,
                 isRecommended: plan.isRecommended
             )
         }
@@ -38,7 +40,7 @@ class PlansViewModel: ObservableObject {
                 id: plan.id,
                 planName: plan.planName,
                 deductible: plan.deductible,
-                premium: plan.premium
+                premium: plan.premium,
             )
         }
     }

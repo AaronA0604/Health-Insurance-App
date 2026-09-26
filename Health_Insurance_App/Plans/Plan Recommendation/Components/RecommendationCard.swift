@@ -61,8 +61,10 @@ struct RecommendationCard: View {
             recommendation: RecommendationCardVars(
                 id: "002",
                 planName: "Sample Plan",
+                coName: "Highmark",
                 deductible: 3200,
                 premium: 375,
+                url: "https://highmark.com/",
                 isRecommended: true,
             ),
             border: .blue
