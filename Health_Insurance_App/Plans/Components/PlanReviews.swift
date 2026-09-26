@@ -13,7 +13,7 @@ struct PlanReviews: View {
     
     var body: some View {
         VStack(spacing: 12) {
-            ForEach(reviewManager.filteredReviews, id: \.id) { review in
+            ForEach(reviewManager.filteredReviews) { review in                
                 VStack(alignment: .leading) {
                     Text("Network Coverage:")
                         .bold()
