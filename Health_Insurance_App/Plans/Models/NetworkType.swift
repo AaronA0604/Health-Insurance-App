@@ -12,8 +12,8 @@ enum NetworkType: String, Identifiable, CaseIterable, Hashable {
     case ppo
     case epo
     case pos
+    case hdhp
     case indemnity
-    case pffs
     
     var id: String {
         rawValue
