@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PlanVars: Identifiable {
+struct PlanVars: CostDisplayable, Identifiable {
     let id: String
     // TODO: make id a UUID() that persists through a database
     
