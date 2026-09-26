@@ -16,6 +16,10 @@ struct PlanDetailsView: View {
     var selection: Int
     var recommended: Bool
     
+    var pageTitle: String {
+        recommended ? vm.recommendedPlans[selection].planName : vm.filteredPlans[selection].planName
+    }
+    
     var body: some View {
         Background {
             ScrollView {
@@ -23,20 +27,38 @@ struct PlanDetailsView: View {
                     VStack {
                         // MARK: Deductible and premium information
                         if recommended {
-                            CostDetailsCard(plan: vm.recommendedPlans[selection] as! CostDisplayable)
+                            if let plan = vm.recommendedPlans[selection] as? CostDisplayable {
+                                CostDetailsCard(plan: plan)
+                            } else {
+                                Text("Unable to load plan details")
+                            }
                         } else {
-                            CostDetailsCard(plan: vm.filteredPlans[selection] as! CostDisplayable)
-                        }
+                            if let plan = vm.filteredPlans[selection] as? CostDisplayable {
+                                CostDetailsCard(plan: plan)
+                            } else {
+                                Text("Unable to load plan details")
+                            }                        }
                         
                         HStack {
                             // MARK: Link to provider's home page
-                            Link(destination: URL(string: vm.recommendedPlans[selection].url)!) {
-                                Text("\(vm.recommendedPlans[selection].coName)'s home page")
-                                    .font(.headline)
-                                    .frame(maxWidth: .infinity)
-                                    .padding()
-                                    .background(.tint, in: RoundedRectangle(cornerRadius: 16))
-                                    .foregroundStyle(.white)
+                            if recommended {
+                                Link(destination: URL(string: vm.recommendedPlans[selection].url)!) {
+                                    Text("\(vm.recommendedPlans[selection].coName)'s home page")
+                                        .font(.headline)
+                                        .frame(maxWidth: .infinity)
+                                        .padding()
+                                        .background(.tint, in: RoundedRectangle(cornerRadius: 16))
+                                        .foregroundStyle(.white)
+                                }
+                            } else {
+                                Link(destination: URL(string: vm.filteredPlans[selection].url)!) {
+                                    Text("\(vm.filteredPlans[selection].coName)'s home page")
+                                        .font(.headline)
+                                        .frame(maxWidth: .infinity)
+                                        .padding()
+                                        .background(.tint, in: RoundedRectangle(cornerRadius: 16))
+                                        .foregroundStyle(.white)
+                                }
                             }
                             
                             // MARK: Navigation link to specific details page
@@ -92,20 +114,30 @@ struct PlanDetailsView: View {
                         .foregroundStyle(.white)
                         .sheet(isPresented: $showReview) {
                             NavigationStack {
-                                ReviewView(planID: vm.recommendedPlans[selection].id)
-                                    .environmentObject(reviewManager)
+                                if recommended {
+                                    ReviewView(planID: vm.recommendedPlans[selection].id)
+                                        .environmentObject(reviewManager)
+                                } else {
+                                    ReviewView(planID: vm.filteredPlans[selection].id)
+                                        .environmentObject(reviewManager)
+                                }
                             }
                         }
                         
-                        PlanReviews(planID: vm.recommendedPlans[selection].id)
-                            .environmentObject(reviewManager)
+                        if recommended {
+                            PlanReviews(planID: vm.recommendedPlans[selection].id)
+                                .environmentObject(reviewManager)
+                        } else {
+                            PlanReviews(planID: vm.filteredPlans[selection].id)
+                                .environmentObject(reviewManager)
+                        }
                     }
                     .padding()
                     .background(.white, in: RoundedRectangle(cornerRadius: 16))
                 }
                 .padding(.horizontal)
             }
-            .navigationTitle(vm.recommendedPlans[selection].planName)
+            .navigationTitle(pageTitle)
         }
     }
 }
