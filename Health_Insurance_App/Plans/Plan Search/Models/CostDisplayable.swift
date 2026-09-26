@@ -11,6 +11,8 @@ import Foundation
 protocol CostDisplayable {
     var id: String { get }
     var planName: String { get }
+    var coName: String { get }
     var deductible: Decimal { get }
     var premium: Decimal { get }
+    var url: String { get }
 }

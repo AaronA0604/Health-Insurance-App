@@ -12,7 +12,9 @@ struct RecommendationCardVars: CostDisplayable, Identifiable {
     var id: String
     // TODO: make id a UUID() that persists through a database
     var planName: String
+    var coName: String
     var deductible: Decimal
     var premium: Decimal
+    var url: String
     var isRecommended: Bool
 }
