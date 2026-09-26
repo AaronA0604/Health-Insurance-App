@@ -29,11 +29,14 @@ struct CostDetailsCard: View {
 #Preview {
     Background {
         CostDetailsCard(
-            plan: PlanCardVars(
+            plan: RecommendationCardVars(
                 id: "003",
                 planName: "Sample Plan",
+                coName: "Aetna",
                 deductible: 3500.00,
-                premium: 315.00
+                premium: 315.00,
+                url: "https://www.aetna.com/",
+                isRecommended: false
             )
         )
     }
