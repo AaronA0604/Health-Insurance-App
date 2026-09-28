@@ -27,9 +27,4 @@ struct ScoreDictionary {
     var utilizationFit: [UtilizationFit: Int] = Dictionary(
         uniqueKeysWithValues: UtilizationFit.allCases.map { ($0, 0) }
     )
-    
-    // coverage scope score dictionary
-    var coverageScope: [CoverageScope: Int] = Dictionary(
-        uniqueKeysWithValues: CoverageScope.allCases.map { ($0, 0) }
-    )
 }
