@@ -50,8 +50,6 @@ struct PlanVars: CostDisplayable, Identifiable {
 //    var avgCopay: Decimal
 //    var avgCoinsuranceRate: Decimal
     
-    // vars for computing coverageScope
-//    var networkStatesCovered: Int
     
     // vars for computing coverageStrength
 //    var preventiveCostSharing: Decimal
@@ -65,6 +63,5 @@ struct PlanVars: CostDisplayable, Identifiable {
     var riskProfile: RiskProfile    // overall financial exposure + cost structure
     var drugCoverage: DrugCoverage  // how good the prescription coverage is
     var utilizationFit: UtilizationFit  // what usage level the plan is optimized for
-    var coverageScope: CoverageScope    // how large the coverage area is
     // TODO: add other variables as needed
 }
