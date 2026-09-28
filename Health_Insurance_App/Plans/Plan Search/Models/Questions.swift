@@ -268,47 +268,7 @@ struct Questions {
                         networkType: [:],
                         riskProfile: [:],
                         drugCoverage: [:],
-                        utilizationFit: [.veryHigh: 5],
-                        coverageScope: [:]
-                    )
-                )
-            ]
-        ),
-        
-        // MARK: coverage scope
-        QuestionVars(
-            question: "Where do you need to have access to healthcare?",
-            answers: [
-                Answer(
-                    text: "Near my home",
-                    scoreChanges: ScoreDictionary(
-                        networkType: [:],
-                        riskProfile: [:],
-                        drugCoverage: [:],
-                        utilizationFit: [:],
-                        coverageScope: [.local: 5, .regional: 5, .national: 5]
-                    )
-                ),
-                
-                Answer(
-                    text: "Throughout my region/state",
-                    scoreChanges: ScoreDictionary(
-                        networkType: [:],
-                        riskProfile: [:],
-                        drugCoverage: [:],
-                        utilizationFit: [:],
-                        coverageScope: [.regional: 5, .national: 5]
-                    )
-                ),
-                
-                Answer(
-                    text: "Throughout the U.S.",
-                    scoreChanges: ScoreDictionary(
-                        networkType: [:],
-                        riskProfile: [:],
-                        drugCoverage: [:],
-                        utilizationFit: [:],
-                        coverageScope: [.national: 5]
+                        utilizationFit: [.veryHigh: 5]
                     )
                 )
             ]
