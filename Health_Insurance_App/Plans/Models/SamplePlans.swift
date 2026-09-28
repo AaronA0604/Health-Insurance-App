@@ -23,8 +23,7 @@ struct SamplePlans {
             networkType: .pos,
             riskProfile: .lphr,
             drugCoverage: .standard,
-            utilizationFit: .low,
-            coverageScope: .local,
+            utilizationFit: .low
         ),
         
         PlanVars(
@@ -38,8 +37,7 @@ struct SamplePlans {
             networkType: .pos,
             riskProfile: .lphr,
             drugCoverage: .standard,
-            utilizationFit: .veryHigh,
-            coverageScope: .local,
+            utilizationFit: .veryHigh
         ),
         
         PlanVars(
@@ -53,8 +51,7 @@ struct SamplePlans {
             networkType: .pos,
             riskProfile: .hplr,
             drugCoverage: .poor,
-            utilizationFit: .medium,
-            coverageScope: .local,
+            utilizationFit: .medium
         ),
         
         PlanVars(
@@ -68,8 +65,7 @@ struct SamplePlans {
             networkType: .hmo,
             riskProfile: .hplr,
             drugCoverage: .standard,
-            utilizationFit: .high,
-            coverageScope: .local,
+            utilizationFit: .high
         ),
         
         PlanVars(
@@ -83,8 +79,7 @@ struct SamplePlans {
             networkType: .ppo,
             riskProfile: .balanced,
             drugCoverage: .standard,
-            utilizationFit: .veryHigh,
-            coverageScope: .national,
+            utilizationFit: .veryHigh
         ),
         
         PlanVars(
@@ -98,8 +93,7 @@ struct SamplePlans {
             networkType: .epo,
             riskProfile: .balanced,
             drugCoverage: .standard,
-            utilizationFit: .high,
-            coverageScope: .local,
+            utilizationFit: .high
         ),
         
         PlanVars(
@@ -113,8 +107,7 @@ struct SamplePlans {
             networkType: .indemnity,
             riskProfile: .hplr,
             drugCoverage: .poor,
-            utilizationFit: .high,
-            coverageScope: .local,
+            utilizationFit: .high
         ),
         
         PlanVars(
@@ -128,8 +121,7 @@ struct SamplePlans {
             networkType: .hmo,
             riskProfile: .hplr,
             drugCoverage: .strong,
-            utilizationFit: .low,
-            coverageScope: .regional,
+            utilizationFit: .low
         ),
         
         PlanVars(
@@ -143,8 +135,7 @@ struct SamplePlans {
             networkType: .indemnity,
             riskProfile: .hplr,
             drugCoverage: .standard,
-            utilizationFit: .veryHigh,
-            coverageScope: .regional,
+            utilizationFit: .veryHigh
         ),
         
         PlanVars(
@@ -158,8 +149,7 @@ struct SamplePlans {
             networkType: .hmo,
             riskProfile: .hplr,
             drugCoverage: .poor,
-            utilizationFit: .high,
-            coverageScope: .regional,
+            utilizationFit: .high
         ),
         
         PlanVars(
@@ -173,8 +163,7 @@ struct SamplePlans {
             networkType: .indemnity,
             riskProfile: .balanced,
             drugCoverage: .strong,
-            utilizationFit: .high,
-            coverageScope: .regional,
+            utilizationFit: .high
         ),
         
         PlanVars(
@@ -188,8 +177,7 @@ struct SamplePlans {
             networkType: .pos,
             riskProfile: .hplr,
             drugCoverage: .standard,
-            utilizationFit: .medium,
-            coverageScope: .local,
+            utilizationFit: .medium
         ),
         
         PlanVars(
@@ -203,8 +191,7 @@ struct SamplePlans {
             networkType: .hmo,
             riskProfile: .lphr,
             drugCoverage: .strong,
-            utilizationFit: .high,
-            coverageScope: .national,
+            utilizationFit: .high
         ),
         
         PlanVars(
@@ -218,8 +205,7 @@ struct SamplePlans {
             networkType: .ppo,
             riskProfile: .balanced,
             drugCoverage: .veryStrong,
-            utilizationFit: .veryHigh,
-            coverageScope: .local,
+            utilizationFit: .veryHigh
         ),
         
         PlanVars(
@@ -230,11 +216,10 @@ struct SamplePlans {
             premium: 200.00,
             url: "https://www.centene.com/",
             oopMax: 8100.00,
-            networkType: .pffs,
+            networkType: .hdhp,
             riskProfile: .hplr,
             drugCoverage: .veryStrong,
-            utilizationFit: .low,
-            coverageScope: .regional,
+            utilizationFit: .low
         ),
         
         PlanVars(
@@ -245,11 +230,10 @@ struct SamplePlans {
             premium: 230.00,
             url: "https://www.wellcare.com/",
             oopMax: 7900.00,
-            networkType: .pffs,
+            networkType: .hdhp,
             riskProfile: .lphr,
             drugCoverage: .strong,
-            utilizationFit: .medium,
-            coverageScope: .local,
+            utilizationFit: .medium
         ),
         
         PlanVars(
@@ -263,8 +247,7 @@ struct SamplePlans {
             networkType: .hmo,
             riskProfile: .lphr,
             drugCoverage: .poor,
-            utilizationFit: .veryHigh,
-            coverageScope: .local,
+            utilizationFit: .veryHigh
         ),
         
         PlanVars(
@@ -278,8 +261,7 @@ struct SamplePlans {
             networkType: .pos,
             riskProfile: .balanced,
             drugCoverage: .veryStrong,
-            utilizationFit: .veryHigh,
-            coverageScope: .local,
+            utilizationFit: .veryHigh
         ),
         
         PlanVars(
@@ -290,11 +272,10 @@ struct SamplePlans {
             premium: 395.00,
             url: "https://highmark.com/",
             oopMax: 6900.00,
-            networkType: .pffs,
+            networkType: .hdhp,
             riskProfile: .balanced,
             drugCoverage: .veryStrong,
-            utilizationFit: .low,
-            coverageScope: .local,
+            utilizationFit: .low
         ),
         
         PlanVars(
@@ -308,8 +289,7 @@ struct SamplePlans {
             networkType: .ppo,
             riskProfile: .lphr,
             drugCoverage: .poor,
-            utilizationFit: .medium,
-            coverageScope: .local,
+            utilizationFit: .medium
         ),
         
         PlanVars(
@@ -323,8 +303,7 @@ struct SamplePlans {
             networkType: .epo,
             riskProfile: .balanced,
             drugCoverage: .veryStrong,
-            utilizationFit: .high,
-            coverageScope: .regional,
+            utilizationFit: .high
         ),
         
         PlanVars(
@@ -338,8 +317,7 @@ struct SamplePlans {
             networkType: .pos,
             riskProfile: .balanced,
             drugCoverage: .strong,
-            utilizationFit: .veryHigh,
-            coverageScope: .national,
+            utilizationFit: .veryHigh
         ),
         
         PlanVars(
@@ -353,8 +331,7 @@ struct SamplePlans {
             networkType: .indemnity,
             riskProfile: .balanced,
             drugCoverage: .poor,
-            utilizationFit: .medium,
-            coverageScope: .national,
+            utilizationFit: .medium
         ),
         
         PlanVars(
@@ -368,8 +345,7 @@ struct SamplePlans {
             networkType: .epo,
             riskProfile: .balanced,
             drugCoverage: .poor,
-            utilizationFit: .medium,
-            coverageScope: .regional,
+            utilizationFit: .medium
         ),
         
         PlanVars(
@@ -380,11 +356,10 @@ struct SamplePlans {
             premium: 310.00,
             url: "https://www.anthem.com/",
             oopMax: 7350.00,
-            networkType: .pffs,
+            networkType: .hdhp,
             riskProfile: .balanced,
             drugCoverage: .standard,
-            utilizationFit: .veryHigh,
-            coverageScope: .national,
+            utilizationFit: .veryHigh
         ),
         
         PlanVars(
@@ -398,8 +373,7 @@ struct SamplePlans {
             networkType: .indemnity,
             riskProfile: .lphr,
             drugCoverage: .poor,
-            utilizationFit: .high,
-            coverageScope: .regional,
+            utilizationFit: .high
         ),
         
         PlanVars(
@@ -413,8 +387,7 @@ struct SamplePlans {
             networkType: .indemnity,
             riskProfile: .hplr,
             drugCoverage: .veryStrong,
-            utilizationFit: .veryHigh,
-            coverageScope: .regional,
+            utilizationFit: .veryHigh
         ),
         
         PlanVars(
@@ -428,8 +401,7 @@ struct SamplePlans {
             networkType: .pos,
             riskProfile: .balanced,
             drugCoverage: .strong,
-            utilizationFit: .low,
-            coverageScope: .regional,
+            utilizationFit: .low
         ),
         
         PlanVars(
@@ -443,8 +415,7 @@ struct SamplePlans {
             networkType: .pos,
             riskProfile: .balanced,
             drugCoverage: .poor,
-            utilizationFit: .medium,
-            coverageScope: .local,
+            utilizationFit: .medium
         ),
         
         PlanVars(
@@ -458,8 +429,7 @@ struct SamplePlans {
             networkType: .epo,
             riskProfile: .balanced,
             drugCoverage: .poor,
-            utilizationFit: .low,
-            coverageScope: .national,
+            utilizationFit: .low
         ),
         
         PlanVars(
@@ -473,8 +443,7 @@ struct SamplePlans {
             networkType: .epo,
             riskProfile: .hplr,
             drugCoverage: .poor,
-            utilizationFit: .high,
-            coverageScope: .national,
+            utilizationFit: .high
         ),
         
         PlanVars(
@@ -485,11 +454,10 @@ struct SamplePlans {
             premium: 355.00,
             url: "https://highmark.com/",
             oopMax: 7050.00,
-            networkType: .pffs,
+            networkType: .hdhp,
             riskProfile: .lphr,
             drugCoverage: .veryStrong,
-            utilizationFit: .high,
-            coverageScope: .national,
+            utilizationFit: .high
         ),
         
         PlanVars(
@@ -503,8 +471,7 @@ struct SamplePlans {
             networkType: .indemnity,
             riskProfile: .hplr,
             drugCoverage: .strong,
-            utilizationFit: .low,
-            coverageScope: .national,
+            utilizationFit: .low
         ),
         
         PlanVars(
@@ -518,8 +485,7 @@ struct SamplePlans {
             networkType: .epo,
             riskProfile: .lphr,
             drugCoverage: .veryStrong,
-            utilizationFit: .veryHigh,
-            coverageScope: .regional,
+            utilizationFit: .veryHigh
         ),
         
         PlanVars(
@@ -533,8 +499,7 @@ struct SamplePlans {
             networkType: .hmo,
             riskProfile: .lphr,
             drugCoverage: .strong,
-            utilizationFit: .low,
-            coverageScope: .national,
+            utilizationFit: .low
         ),
         
         PlanVars(
@@ -548,8 +513,7 @@ struct SamplePlans {
             networkType: .epo,
             riskProfile: .lphr,
             drugCoverage: .strong,
-            utilizationFit: .high,
-            coverageScope: .regional,
+            utilizationFit: .high
         ),
         
         PlanVars(
@@ -563,8 +527,7 @@ struct SamplePlans {
             networkType: .epo,
             riskProfile: .hplr,
             drugCoverage: .standard,
-            utilizationFit: .medium,
-            coverageScope: .national,
+            utilizationFit: .medium
         ),
         
         PlanVars(
@@ -578,8 +541,7 @@ struct SamplePlans {
             networkType: .ppo,
             riskProfile: .hplr,
             drugCoverage: .poor,
-            utilizationFit: .medium,
-            coverageScope: .national,
+            utilizationFit: .medium
         ),
         
         PlanVars(
@@ -593,8 +555,7 @@ struct SamplePlans {
             networkType: .indemnity,
             riskProfile: .hplr,
             drugCoverage: .standard,
-            utilizationFit: .low,
-            coverageScope: .national,
+            utilizationFit: .low
         ),
         
         PlanVars(
@@ -605,11 +566,10 @@ struct SamplePlans {
             premium: 385.00,
             url: "https://www.hioscar.com/",
             oopMax: 6750.00,
-            networkType: .pffs,
+            networkType: .hdhp,
             riskProfile: .hplr,
             drugCoverage: .poor,
-            utilizationFit: .high,
-            coverageScope: .national,
+            utilizationFit: .high
         ),
         
         PlanVars(
@@ -623,8 +583,7 @@ struct SamplePlans {
             networkType: .ppo,
             riskProfile: .lphr,
             drugCoverage: .strong,
-            utilizationFit: .low,
-            coverageScope: .national,
+            utilizationFit: .low
         ),
         
         PlanVars(
@@ -635,11 +594,10 @@ struct SamplePlans {
             premium: 145.00,
             url: "https://www.wellcare.com/",
             oopMax: 8600.00,
-            networkType: .pffs,
+            networkType: .hdhp,
             riskProfile: .balanced,
             drugCoverage: .veryStrong,
-            utilizationFit: .medium,
-            coverageScope: .regional,
+            utilizationFit: .medium
         ),
         
         PlanVars(
@@ -653,8 +611,7 @@ struct SamplePlans {
             networkType: .ppo,
             riskProfile: .lphr,
             drugCoverage: .standard,
-            utilizationFit: .low,
-            coverageScope: .local,
+            utilizationFit: .low
         ),
         
         PlanVars(
@@ -668,8 +625,7 @@ struct SamplePlans {
             networkType: .ppo,
             riskProfile: .lphr,
             drugCoverage: .strong,
-            utilizationFit: .medium,
-            coverageScope: .regional,
+            utilizationFit: .medium
         ),
         
         PlanVars(
@@ -683,8 +639,7 @@ struct SamplePlans {
             networkType: .hmo,
             riskProfile: .balanced,
             drugCoverage: .veryStrong,
-            utilizationFit: .veryHigh,
-            coverageScope: .regional,
+            utilizationFit: .veryHigh
         ),
         
         PlanVars(
@@ -698,8 +653,7 @@ struct SamplePlans {
             networkType: .hmo,
             riskProfile: .lphr,
             drugCoverage: .veryStrong,
-            utilizationFit: .high,
-            coverageScope: .regional,
+            utilizationFit: .high
         ),
         
         PlanVars(
@@ -713,8 +667,7 @@ struct SamplePlans {
             networkType: .hmo,
             riskProfile: .hplr,
             drugCoverage: .standard,
-            utilizationFit: .low,
-            coverageScope: .regional,
+            utilizationFit: .low
         ),
         
         PlanVars(
@@ -728,8 +681,7 @@ struct SamplePlans {
             networkType: .ppo,
             riskProfile: .balanced,
             drugCoverage: .veryStrong,
-            utilizationFit: .medium,
-            coverageScope: .national,
+            utilizationFit: .medium
         ),
         
         PlanVars(
@@ -743,8 +695,7 @@ struct SamplePlans {
             networkType: .ppo,
             riskProfile: .hplr,
             drugCoverage: .strong,
-            utilizationFit: .veryHigh,
-            coverageScope: .local,
+            utilizationFit: .veryHigh
         ),
         
         PlanVars(
@@ -755,11 +706,10 @@ struct SamplePlans {
             premium: 220.00,
             url: "https://www.kaiserpermanente.org/",
             oopMax: 7950.00,
-            networkType: .pffs,
+            networkType: .hdhp,
             riskProfile: .lphr,
             drugCoverage: .standard,
-            utilizationFit: .medium,
-            coverageScope: .local,
+            utilizationFit: .medium
         )
     ]
 }
