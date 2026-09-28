@@ -13,5 +13,4 @@ enum ScoreCategory {
     case riskProfile(RiskProfile)    // overall financial exposure + cost structure
     case drugCoverage(DrugCoverage)  // how good the prescription coverage is
     case utilizationFit(UtilizationFit)  // what usage level the plan is optimized for
-    case coverageScope(CoverageScope)   // how large the coverage area is
 }
