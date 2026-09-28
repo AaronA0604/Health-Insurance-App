@@ -29,10 +29,6 @@ final class PlanFilteringEngine {
             for (utilizationFit, points) in answer.scoreChanges.utilizationFit {
                 scores.utilizationFit[utilizationFit, default: 0] += points
             }
-            
-            for (coverageScope, points) in answer.scoreChanges.coverageScope {
-                scores.coverageScope[coverageScope, default: 0] += points
-            }
         }
         
         return scores
@@ -85,17 +81,6 @@ final class PlanFilteringEngine {
                 keys.append(.utilizationFit(key))
             }
         }
-        
-        // coverage scope
-        if scores.coverageScope.values.allSatisfy({ $0 == 0 }) {
-            for key in scores.coverageScope.keys {
-                keys.append(.coverageScope(key))
-            }
-        } else {
-            for (key, value) in scores.coverageScope where value >= 5 {
-                keys.append(.coverageScope(key))
-            }
-        }
                 
         return keys
     }
@@ -111,7 +96,6 @@ final class PlanFilteringEngine {
         var riskProfileKeys: Set<RiskProfile> = []
         var drugCoverageKeys: Set<DrugCoverage> = []
         var utilizationFitKeys: Set<UtilizationFit> = []
-        var coverageScopeKeys: Set<CoverageScope> = []
 
         for key in keys {
             switch key {
@@ -119,7 +103,6 @@ final class PlanFilteringEngine {
             case .riskProfile(let value): riskProfileKeys.insert(value)
             case .drugCoverage(let value): drugCoverageKeys.insert(value)
             case .utilizationFit(let value): utilizationFitKeys.insert(value)
-            case .coverageScope(let value): coverageScopeKeys.insert(value)
             }
         }
 
@@ -128,7 +111,6 @@ final class PlanFilteringEngine {
             && riskProfileKeys.contains(plan.riskProfile)
             && drugCoverageKeys.contains(plan.drugCoverage)
             && utilizationFitKeys.contains(plan.utilizationFit)
-            && coverageScopeKeys.contains(plan.coverageScope)
         }
                 
         return filtered
