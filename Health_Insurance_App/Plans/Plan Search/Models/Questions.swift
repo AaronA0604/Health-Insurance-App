@@ -31,8 +31,7 @@ struct Questions {
                         networkType: [.ppo: 5, .epo: 5, .pos: 2, .indemnity: 5, .pffs: 5],
                         riskProfile: [:],
                         drugCoverage: [:],
-                        utilizationFit: [:],
-                        coverageScope: [:]
+                        utilizationFit: [:]
                     )
                 ),
                 
@@ -42,8 +41,7 @@ struct Questions {
                         networkType: [.hmo: 2, .ppo: 5, .epo: 5, .pos: 3, .indemnity: 5, .pffs: 5],
                         riskProfile: [:],
                         drugCoverage: [:],
-                        utilizationFit: [:],
-                        coverageScope: [:]
+                        utilizationFit: [:]
                     )
                 ),
                 
@@ -53,8 +51,7 @@ struct Questions {
                         networkType: [.hmo: 5, .ppo: 5, .epo: 5, .pos: 5, .indemnity: 5, .pffs: 5],
                         riskProfile: [:],
                         drugCoverage: [:],
-                        utilizationFit: [:],
-                        coverageScope: [:]
+                        utilizationFit: [:]
                     )
                 )
             ]
@@ -69,8 +66,7 @@ struct Questions {
                         networkType: [.hmo: 1, .ppo: 5, .epo: 2, .pos: 4, .indemnity: 5, .pffs: 4],
                         riskProfile: [:],
                         drugCoverage: [:],
-                        utilizationFit: [:],
-                        coverageScope: [:]
+                        utilizationFit: [:]
                     )
                 ),
                 
@@ -80,8 +76,7 @@ struct Questions {
                         networkType: [.hmo: 3, .ppo: 5, .epo: 3, .pos: 5, .indemnity: 5, .pffs: 5],
                         riskProfile: [:],
                         drugCoverage: [:],
-                        utilizationFit: [:],
-                        coverageScope: [:]
+                        utilizationFit: [:]
                     )
                 ),
                 
@@ -91,8 +86,7 @@ struct Questions {
                         networkType: [.hmo: 5, .ppo: 5, .epo: 5, .pos: 5, .indemnity: 5, .pffs: 5],
                         riskProfile: [:],
                         drugCoverage: [:],
-                        utilizationFit: [:],
-                        coverageScope: [:]
+                        utilizationFit: [:]
                     )
                 )
             ]
@@ -107,8 +101,7 @@ struct Questions {
                         networkType: [.hmo: 1, .ppo: 5, .epo: 2, .pos: 4, .indemnity: 5, .pffs: 4],
                         riskProfile: [:],
                         drugCoverage: [:],
-                        utilizationFit: [:],
-                        coverageScope: [:]
+                        utilizationFit: [:]
                     )
                 ),
                 
@@ -118,8 +111,7 @@ struct Questions {
                         networkType: [.hmo: 3, .ppo: 3, .epo: 3, .pos: 3, .indemnity: 3, .pffs: 3],
                         riskProfile: [:],
                         drugCoverage: [:],
-                        utilizationFit: [:],
-                        coverageScope: [:]
+                        utilizationFit: [:]
                     )
                 ),
                 
@@ -129,8 +121,7 @@ struct Questions {
                         networkType: [.hmo: 5, .ppo: 2, .epo: 5, .pos: 2, .indemnity: 2, .pffs: 2],
                         riskProfile: [:],
                         drugCoverage: [:],
-                        utilizationFit: [:],
-                        coverageScope: [:]
+                        utilizationFit: [:]
                     )
                 )
             ]
@@ -146,8 +137,7 @@ struct Questions {
                         networkType: [:],
                         riskProfile: [.hplr: 5],
                         drugCoverage: [:],
-                        utilizationFit: [:],
-                        coverageScope: [:]
+                        utilizationFit: [:]
                     )
                 ),
                 
@@ -157,8 +147,7 @@ struct Questions {
                         networkType: [:],
                         riskProfile: [.balanced: 5],
                         drugCoverage: [:],
-                        utilizationFit: [:],
-                        coverageScope: [:]
+                        utilizationFit: [:]
                     )
                 ),
                 
@@ -168,8 +157,7 @@ struct Questions {
                         networkType: [:],
                         riskProfile: [.lphr: 5],
                         drugCoverage: [:],
-                        utilizationFit: [:],
-                        coverageScope: [:]
+                        utilizationFit: [:]
                     )
                 )
             ]
@@ -185,8 +173,7 @@ struct Questions {
                         networkType: [:],
                         riskProfile: [:],
                         drugCoverage: [.poor: 5],
-                        utilizationFit: [:],
-                        coverageScope: [:]
+                        utilizationFit: [:]
                     )
                 ),
                 
@@ -196,8 +183,7 @@ struct Questions {
                         networkType: [:],
                         riskProfile: [:],
                         drugCoverage: [.standard: 5],
-                        utilizationFit: [:],
-                        coverageScope: [:]
+                        utilizationFit: [:]
                     )
                 ),
                 
@@ -207,8 +193,7 @@ struct Questions {
                         networkType: [:],
                         riskProfile: [:],
                         drugCoverage: [.strong: 5],
-                        utilizationFit: [:],
-                        coverageScope: [:]
+                        utilizationFit: [:]
                     )
                 ),
                 
@@ -218,8 +203,7 @@ struct Questions {
                         networkType: [:],
                         riskProfile: [:],
                         drugCoverage: [.veryStrong: 5],
-                        utilizationFit: [:],
-                        coverageScope: [:]
+                        utilizationFit: [:]
                     )
                 )
             ]
@@ -235,8 +219,7 @@ struct Questions {
                         networkType: [:],
                         riskProfile: [:],
                         drugCoverage: [:],
-                        utilizationFit: [.low: 5],
-                        coverageScope: [:]
+                        utilizationFit: [.low: 5]
                     )
                 ),
                 
@@ -246,8 +229,7 @@ struct Questions {
                         networkType: [:],
                         riskProfile: [:],
                         drugCoverage: [:],
-                        utilizationFit: [.medium: 5],
-                        coverageScope: [:]
+                        utilizationFit: [.medium: 5]
                     )
                 ),
                 
@@ -257,8 +239,7 @@ struct Questions {
                         networkType: [:],
                         riskProfile: [:],
                         drugCoverage: [:],
-                        utilizationFit: [.high: 5],
-                        coverageScope: [:]
+                        utilizationFit: [.high: 5]
                     )
                 ),
                 
