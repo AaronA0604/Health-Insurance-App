@@ -23,12 +23,12 @@ struct Questions {
     let questions: [QuestionVars] = [
         // MARK: network type
         QuestionVars(
-            question: "Are you okay with getting a referral from your primary care doctor before seeing a specialist?",
+            question: "Which of the following statements is the most true about you?",
             answers: [
                 Answer(
-                    text: "No, that's not okay",
+                    text: "I want to pay the least amount of money possible, even though it limits my choice concerning healthcare.",
                     scoreChanges: ScoreDictionary(
-                        networkType: [.ppo: 5, .epo: 5, .pos: 2, .indemnity: 5, .pffs: 5],
+                        networkType: [.hmo: 5, .ppo: -10, .epo: -10, .pos: -10, .indemnity: -10],
                         riskProfile: [:],
                         drugCoverage: [:],
                         utilizationFit: [:]
@@ -36,9 +36,9 @@ struct Questions {
                 ),
                 
                 Answer(
-                    text: "Maybe",
+                    text: "I want to pay a moderate amount of money to be able to have a medium amount of choice concerning my healthcare.",
                     scoreChanges: ScoreDictionary(
-                        networkType: [.hmo: 2, .ppo: 5, .epo: 5, .pos: 3, .indemnity: 5, .pffs: 5],
+                        networkType: [.hmo: -10, .ppo: -10, .epo: 5, .pos: 5, .indemnity: -10],
                         riskProfile: [:],
                         drugCoverage: [:],
                         utilizationFit: [:]
@@ -46,9 +46,19 @@ struct Questions {
                 ),
                 
                 Answer(
-                    text: "Yes, that's fine",
+                    text: "I am fine with paying a lot of money, since it means I will have a lot of choice concerning my healthcare.",
                     scoreChanges: ScoreDictionary(
-                        networkType: [.hmo: 5, .ppo: 5, .epo: 5, .pos: 5, .indemnity: 5, .pffs: 5],
+                        networkType: [.hmo: -10, .ppo: 5, .epo: -10, .pos: -10, .indemnity: -10],
+                        riskProfile: [:],
+                        drugCoverage: [:],
+                        utilizationFit: [:]
+                    )
+                ),
+                
+                Answer(
+                    text: "I am fine with paying the most amount of money, since it means I will have full choice concerning my healthcare.",
+                    scoreChanges: ScoreDictionary(
+                        networkType: [.hmo: -10, .ppo: -10, .epo: -10, .pos: -10, .indemnity: 5],
                         riskProfile: [:],
                         drugCoverage: [:],
                         utilizationFit: [:]
@@ -57,75 +67,67 @@ struct Questions {
             ]
         ),
         
-        QuestionVars(
-            question: "How important is it that you keep your current doctors?",
-            answers: [
-                Answer(
-                    text: "Very important",
-                    scoreChanges: ScoreDictionary(
-                        networkType: [.hmo: 1, .ppo: 5, .epo: 2, .pos: 4, .indemnity: 5, .pffs: 4],
-                        riskProfile: [:],
-                        drugCoverage: [:],
-                        utilizationFit: [:]
-                    )
-                ),
-                
-                Answer(
-                    text: "Somewhat important",
-                    scoreChanges: ScoreDictionary(
-                        networkType: [.hmo: 3, .ppo: 5, .epo: 3, .pos: 5, .indemnity: 5, .pffs: 5],
-                        riskProfile: [:],
-                        drugCoverage: [:],
-                        utilizationFit: [:]
-                    )
-                ),
-                
-                Answer(
-                    text: "Not important",
-                    scoreChanges: ScoreDictionary(
-                        networkType: [.hmo: 5, .ppo: 5, .epo: 5, .pos: 5, .indemnity: 5, .pffs: 5],
-                        riskProfile: [:],
-                        drugCoverage: [:],
-                        utilizationFit: [:]
-                    )
-                )
-            ]
-        ),
         
-        QuestionVars(
-            question: "Would you pay a higher monthly premium for the ability to choose from more doctors and hospitals?",
-            answers: [
-                Answer(
-                    text: "Yes, I would pay more",
-                    scoreChanges: ScoreDictionary(
-                        networkType: [.hmo: 1, .ppo: 5, .epo: 2, .pos: 4, .indemnity: 5, .pffs: 4],
-                        riskProfile: [:],
-                        drugCoverage: [:],
-                        utilizationFit: [:]
-                    )
-                ),
-                
-                Answer(
-                    text: "Maybe",
-                    scoreChanges: ScoreDictionary(
-                        networkType: [.hmo: 3, .ppo: 3, .epo: 3, .pos: 3, .indemnity: 3, .pffs: 3],
-                        riskProfile: [:],
-                        drugCoverage: [:],
-                        utilizationFit: [:]
-                    )
-                ),
-                
-                Answer(
-                    text: "No, I wouldn't pay more",
-                    scoreChanges: ScoreDictionary(
-                        networkType: [.hmo: 5, .ppo: 2, .epo: 5, .pos: 2, .indemnity: 2, .pffs: 2],
-                        riskProfile: [:],
-                        drugCoverage: [:],
-                        utilizationFit: [:]
-                    )
-                )
-            ]
-        ),
+        
+//        QuestionVars(
+//            question: "Which of the following statements is true about you? (You may select multiple answers.)",
+//            answers: [
+//                Answer(
+//                    text: "I am fine with my insurance only covering doctors and hospitals that are in my network, except for emergencies.",
+//                    scoreChanges: ScoreDictionary(
+//                        networkType: [.hmo: 5, .epo: 5],
+//                        riskProfile: [:],
+//                        drugCoverage: [:],
+//                        utilizationFit: [:]
+//                    )
+//                ),
+//                
+//                Answer(
+//                    text: "I want to be able to use any doctor or hospital, but I will pay more if they are out of my insurance network.",
+//                    scoreChanges: ScoreDictionary(
+//                        networkType: [.hmo: -10, .ppo: 5, .epo: -10, .ppo: 5],
+//                        riskProfile: [:],
+//                        drugCoverage: [:],
+//                        utilizationFit: [:]
+//                    )
+//                ),
+//                
+//                Answer(
+//                    text: "I want full freedom to use any doctor or hospital without a change in the cost.",
+//                    scoreChanges: ScoreDictionary(
+//                        networkType: [.hmo: -10, .ppo: -10, .epo: -10, .pos: -10, .indemnity: 5],
+//                        riskProfile: [:],
+//                        drugCoverage: [:],
+//                        utilizationFit: [:]
+//                    )
+//                )
+//            ]
+//        ),
+//        
+//        QuestionVars(
+//            question: "Which of the following statements is true about you? (You may select multiple answers.)",
+//            answers: [
+//                Answer(
+//                    text: "I am fine with needing to have a primary care physician, and to need a referral to see any specialist.",
+//                    scoreChanges: ScoreDictionary(
+//                        networkType: [.ppo: 5, .epo: 5, .pos: 2, .indemnity: 5, .pffs: 5],
+//                        riskProfile: [:],
+//                        drugCoverage: [:],
+//                        utilizationFit: [:]
+//                    )
+//                ),
+//                
+//                Answer(
+//                    text: "I want to not be required to have a primary care physician, and to not have to have a referral to see a specialist.",
+//                    scoreChanges: ScoreDictionary(
+//                        networkType: [.hmo: 2, .ppo: 5, .epo: 5, .pos: 3, .indemnity: 5, .pffs: 5],
+//                        riskProfile: [:],
+//                        drugCoverage: [:],
+//                        utilizationFit: [:]
+//                    )
+//                )
+//            ]
+//        ),
         
         // MARK: risk
         QuestionVars(
