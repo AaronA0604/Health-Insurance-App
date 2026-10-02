@@ -216,7 +216,7 @@ struct SamplePlans {
             premium: 200.00,
             url: "https://www.centene.com/",
             oopMax: 8100.00,
-            networkType: .hdhp,
+            networkType: .ppo,
             riskProfile: .hplr,
             drugCoverage: .veryStrong,
             utilizationFit: .low
@@ -230,7 +230,7 @@ struct SamplePlans {
             premium: 230.00,
             url: "https://www.wellcare.com/",
             oopMax: 7900.00,
-            networkType: .hdhp,
+            networkType: .epo,
             riskProfile: .lphr,
             drugCoverage: .strong,
             utilizationFit: .medium
@@ -272,7 +272,7 @@ struct SamplePlans {
             premium: 395.00,
             url: "https://highmark.com/",
             oopMax: 6900.00,
-            networkType: .hdhp,
+            networkType: .hmo,
             riskProfile: .balanced,
             drugCoverage: .veryStrong,
             utilizationFit: .low
@@ -356,7 +356,7 @@ struct SamplePlans {
             premium: 310.00,
             url: "https://www.anthem.com/",
             oopMax: 7350.00,
-            networkType: .hdhp,
+            networkType: .ppo,
             riskProfile: .balanced,
             drugCoverage: .standard,
             utilizationFit: .veryHigh
@@ -454,7 +454,7 @@ struct SamplePlans {
             premium: 355.00,
             url: "https://highmark.com/",
             oopMax: 7050.00,
-            networkType: .hdhp,
+            networkType: .epo,
             riskProfile: .lphr,
             drugCoverage: .veryStrong,
             utilizationFit: .high
@@ -566,7 +566,7 @@ struct SamplePlans {
             premium: 385.00,
             url: "https://www.hioscar.com/",
             oopMax: 6750.00,
-            networkType: .hdhp,
+            networkType: .pos,
             riskProfile: .hplr,
             drugCoverage: .poor,
             utilizationFit: .high
@@ -594,7 +594,7 @@ struct SamplePlans {
             premium: 145.00,
             url: "https://www.wellcare.com/",
             oopMax: 8600.00,
-            networkType: .hdhp,
+            networkType: .indemnity,
             riskProfile: .balanced,
             drugCoverage: .veryStrong,
             utilizationFit: .medium
@@ -706,7 +706,7 @@ struct SamplePlans {
             premium: 220.00,
             url: "https://www.kaiserpermanente.org/",
             oopMax: 7950.00,
-            networkType: .hdhp,
+            networkType: .hmo,
             riskProfile: .lphr,
             drugCoverage: .standard,
             utilizationFit: .medium
