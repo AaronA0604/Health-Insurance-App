@@ -133,6 +133,22 @@ struct QuestionnaireSheetView: View {
                             }
                         }
                         
+                        ToolbarItem(placement: .topBarLeading) {
+                            Button {
+                                // Skip questiopn
+                                questionTransition = .asymmetric(
+                                    insertion: .move(edge: .trailing),
+                                    removal: .move(edge: .leading)
+                                )
+                                
+                                withAnimation(.easeInOut(duration: 0.3)) {
+                                    vm.questionIndex += 1
+                                }
+                            } label: {
+                                Image(systemName: "chevron.right")
+                            }
+                        }
+                        
                         ToolbarItem(placement: .topBarTrailing) {
                             Button {
                                 dismiss()
