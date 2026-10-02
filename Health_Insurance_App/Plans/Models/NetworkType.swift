@@ -12,7 +12,6 @@ enum NetworkType: String, Identifiable, CaseIterable, Hashable {
     case ppo
     case epo
     case pos
-    case hdhp
     case indemnity
     
     var id: String {
